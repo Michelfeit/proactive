@@ -5,14 +5,16 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-import transformer.Constants as Constants
-from transformer.Layers import EncoderLayer
+import myTransformer.Constants as Constants
+from myTransformer.Layers import EncoderLayer
 
-
+# returns all positions that are not padding. the non pad positions are marked with a float 1.
+# Finally, another dinmension is added at the end of the tensor SHAPE: (_,_) -> (_,_,1)
 def get_non_pad_mask(seq):
     """ Get the non-padding positions. """
-
+    # only possible if dimension is 2
     assert seq.dim() == 2
+    # unsqueeze adds a dimension at the specified index -> -1 adds the dimension at the end.
     return seq.ne(Constants.PAD).type(torch.float).unsqueeze(-1)
 
 
@@ -63,12 +65,12 @@ class Encoder(nn.Module):
         Input: batch*seq_len.
         Output: batch*seq_len*d_model.
         """
-
         result = time.unsqueeze(-1) / self.position_vec
         # result['start':'stop':'step']
         # torch.sin vektor-weise
         result[:, :, 0::2] = torch.sin(result[:, :, 0::2])
         result[:, :, 1::2] = torch.cos(result[:, :, 1::2])
+        
         return result * non_pad_mask
 
     def forward(self, event_type, event_time, non_pad_mask):
@@ -85,6 +87,7 @@ class Encoder(nn.Module):
         enc_output = self.event_emb(event_type)
 
         for enc_layer in self.layer_stack:
+            # is this y in the paper?
             enc_output += tem_enc
             enc_output, _ = enc_layer(
                 enc_output,
@@ -104,11 +107,7 @@ class Predictor(nn.Module):
 
     def forward(self, data, non_pad_mask):
         out = self.linear(data)
-        print("Hello")
-        print(data.shape)
-        print(out.shape)
         out = out * non_pad_mask
-        
         return out
 
 class LG(nn.Module):
