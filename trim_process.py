@@ -1,17 +1,19 @@
 import numpy as np
-import pdb
 import torch
 import torch.utils.data
 from transformer import Constants
+from process import EventData
 
-class EventData_Trim(torch.utils.data.Dataset):
+class EventData_Trim(EventData):
     def __init__(self, data, alpha):
+        super().__init__(data)
         self.alpha = alpha
-        self.time = [[elem['time_since_start'] for elem in inst] for inst in data]
-        self.time_gap = [[elem['time_since_last_event'] for elem in inst] for inst in data]
-        self.event_type = [[elem['type_event'] + 1 for elem in inst] for inst in data]
-        self.event_goal = [[elem['type_goal'] for elem in inst] for inst in data]
-        self.length = len(data)
+        # self.time = [[elem['time_since_start'] for elem in inst] for inst in data]
+        # self.time_gap = [[elem['time_since_last_event'] for elem in inst] for inst in data]
+        # self.event_type = [[elem['type_event'] + 1 for elem in inst] for inst in data]
+        # self.event_goal = [[elem['type_goal'] for elem in inst] for inst in data]
+        # self.length = len(data)
+        # print(self.length)
 
         # get a list if indeces that stand for the index to be trimmed for ewach sequence
         indeces = []
@@ -42,6 +44,19 @@ class EventData_Trim(torch.utils.data.Dataset):
         self.time_gap = time_gap
         self.event_type = event_type
         self.event_goal = event_goal
+
+    def concat_predictions(self, pred_time, pred_time_gap, pred_event_type, pred_event_goal):
+        if not pred_time:
+           return
+        assert(len(pred_time) == len(pred_time_gap) == len(pred_event_type) == len(pred_event_goal) == self.length)
+        for i in range(self.length):
+            self.time.append(pred_time[i])
+            self.time.append(pred_time_gap[i])
+            self.time.append(pred_event_type[i])
+            self.time.append(pred_event_goal[i])
+
+    # def _assert_same_length(pred_time, pred_time_gap, pred_event_type, pred_event_goal):
+    #     return len(pred_time) == self.length
 
     def __len__(self):
         return self.length
@@ -74,9 +89,9 @@ def collate_trim_fn(insts):
     event_goal = pad_type(event_goal)
     return time, time_gap, event_type, event_goal
 
-def get_trim_dataloader(data, batch_size, shuffle=True, alpha= .3):
-    ds = EventData_Trim(data, alpha)
-    print(ds.alpha)
+def get_trim_dataloader(ds, batch_size, shuffle=True, alpha= .3):
+    #pass ds as argument in order to be able to concat data
+    # ds = EventData_Trim(data, alpha)
     dl = torch.utils.data.DataLoader(
         ds,
         num_workers=2,

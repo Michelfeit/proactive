@@ -10,39 +10,68 @@ from pathlib import Path
 
 import myTransformer.Constants as Constants
 import myTransformer.Utils as Utils
-from process import get_dataloader
-from trim_process import get_trim_dataloader
+from data_preparation import initial_dataloader_preparation
+from data_preparation import get_prediction_loader, load_prediciton_data
+from trim_process import EventData_Trim, get_trim_dataloader
+# from process import get_dataloader
+# from trim_process import get_trim_dataloader, EventData_Trim
 from myTransformer.Models import Transformer
 import pdb
 
 MODEL_PATH = "trainedModels\\transformer01.pth.tar"
 
-def prepare_dataloader(opt):
-    def load_data(name, dict_name):
-        with open(name, 'rb') as f:
-            data = pickle.load(f, encoding='latin-1')
-            num_types = data['dim_process']
-            
-            num_goals = data['dim_goals']
+# the original train method used in the proactive paper
+def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
+    test_acc_list = []
+    test_goal_list = []
+    test_mae_list = []
+    for epoch_i in range(opt.epoch):
+        epoch = epoch_i + 1
+        print('[ Epoch', epoch, ']')
 
-            data = data[dict_name]
-            return data, int(num_types), int(num_goals)
+        start = time.time()
+        train_event, train_type, train_goal, train_time = train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt)
+        print('(Training) Acc: {type: 8.5f}, MAE: {mae: 8.5f}, Itv. GPA: {goal: 8.5f}'.format(type=train_type, mae=train_time, goal=train_goal))
 
-    print('Loading All Datasets...')
-    train_data, num_types, num_goals = load_data(opt.data + 'train.pkl', 'train')
-    test_data, _, _ = load_data(opt.data + 'test.pkl', 'test')
+        print(f"(Training) Acc: {train_type:8.5f}")
+              
+        start = time.time()
+        test_event, test_type, test_goal, test_time = eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt)
+        print('(Testing) Acc: {type: 8.5f}, MAE: {mae: 8.5f}, GPA: {goal: 8.5f}'.format(type=test_type, mae=test_time, goal=test_goal))
 
-   
+        test_acc_list += [test_type]
+        test_goal_list += [test_goal]
+        test_mae_list += [test_time]
+        print('Best ACC: {pred: 8.5f}, MAE: {mae: 8.5f}, GPA: {gpa: 8.5f}'.format(pred=max(test_acc_list), mae=min(test_mae_list), gpa=max(test_goal_list)))
+        scheduler.step()
+
+def predict(model, optimizer, scheduler, opt):
+    pred_data = load_prediciton_data(opt)
+    # trim_event_data encapsules trimmed down versions of action sequences contained in the test.pkl
+    # during this prediction, the eventdata ought to be concatenated with predictions by the model
+    trim_event_data = EventData_Trim(pred_data, .3)
     
+    pred_time = []
+    pred_time_gap = []
+    pred_event_type = []
+    pred_event_goal = []
 
-    print(f"Number of types: {num_types}")
-    print(f"Number of goals: {num_goals}")
+    predicting = True
+    while(predicting):
+        trim_event_data.concat_predictions(pred_time, pred_time_gap, pred_event_type, pred_event_goal)
+        predictionloader = get_prediction_loader(opt, trim_event_data)
+        i = 0
+        for batch in predictionloader:
+            event_time, time_gap, event_type, event_goal = map(lambda x: x.to(opt.device), batch)
+            if(i % 5 == 0):
+                print(event_type)
+            i += 1
+            if(i == 20):
+                predicting = False
+    return
 
-    trainloader = get_dataloader(train_data, opt.batch_size, shuffle=False)
-    testloader = get_dataloader(test_data, opt.batch_size, shuffle=False)
-     # add third type of data that trims the test data down to a given percentile
-    pred_data = get_trim_dataloader(test_data, opt.batch_size, shuffle=False, alpha=0.3)
-    return trainloader, testloader, num_types, num_goals
+def eval_prediction():
+    return
 
 def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt):
     model.train()
@@ -147,42 +176,11 @@ def eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt):
     mae = total_time_se / (total_num_pred)
     return total_event_ll / total_num_event, total_event_rate / total_num_pred, total_goal_rate / total_seqs, mae
 
-# the original train method used in the proactive paper
-def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
-    test_acc_list = []
-    test_goal_list = []
-    test_mae_list = []
-    for epoch_i in range(opt.epoch):
-        epoch = epoch_i + 1
-        print('[ Epoch', epoch, ']')
-
-        start = time.time()
-        train_event, train_type, train_goal, train_time = train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt)
-        print('(Training) Acc: {type: 8.5f}, MAE: {mae: 8.5f}, Itv. GPA: {goal: 8.5f}'.format(type=train_type, mae=train_time, goal=train_goal))
-
-        print(f"(Training) Acc: {train_type:8.5f}")
-              
-        start = time.time()
-        test_event, test_type, test_goal, test_time = eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt)
-        print('(Testing) Acc: {type: 8.5f}, MAE: {mae: 8.5f}, GPA: {goal: 8.5f}'.format(type=test_type, mae=test_time, goal=test_goal))
-
-        test_acc_list += [test_type]
-        test_goal_list += [test_goal]
-        test_mae_list += [test_time]
-        print('Best ACC: {pred: 8.5f}, MAE: {mae: 8.5f}, GPA: {gpa: 8.5f}'.format(pred=max(test_acc_list), mae=min(test_mae_list), gpa=max(test_goal_list)))
-
-        scheduler.step()
-
 def eval_by_gupta(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
     test_acc_list = []
     test_goal_list = []
     test_mae_list = []
 
-    # for epoch_i in range(opt.epoch):
-    #     epoch = epoch_i + 1
-    # print('[ Epoch', epoch, ']')
-
-    # is this necessary?
     optimizer.step()
 
     start = time.time()
@@ -227,8 +225,22 @@ def main():
     opt = parser.parse_args()
 
     opt.device = torch.device('cuda')
-    trainloader, testloader, num_types, num_goals = prepare_dataloader(opt)
 
+    model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
+    # when proactive flag is set, training and evaluation occurs as provided by the paper 'proactive'
+    if(opt.proactive):
+        
+        train(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
+        return
+    # in here the logic of prediction future events and evaluating their accuracy in regards to metrics given by
+    # "A Survey on Deep Learning Techniques for Action Anticipation" is contained.
+    run_action_prediciton(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
+
+def prepare_proactive(opt):
+    trainloader, testloader, num_types, num_goals = initial_dataloader_preparation(opt)
+    # train_data, test_data, pred_data, num_types, num_goals = load_all_data(opt)
+    # get_dataloaders(opt, train_data, test_data, pred_data, num_types, num_goals)
+ 
     model = Transformer(
         num_types=num_types,
         num_goals=num_goals,
@@ -253,34 +265,29 @@ def main():
         pred_loss_func = nn.CrossEntropyLoss(ignore_index=-1, reduction='none')
         pred_loss_goal = nn.CrossEntropyLoss(ignore_index=-1, reduction='none')
 
-    # when proactive flag is set, training and evaluation occurs as provided by the paper 'proactive'
-    if(opt.proactive):
-        num_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-        train(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
-        return
-    
-    # when proactive flag is set to 'False', the alternative evaluation is executed, 
+    return model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal
+
+def run_action_prediciton(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
     # check for a trained modell at MODEL_PATH.
     if Path(MODEL_PATH).is_file():
         print("Trained transformer found. Initializing model parameters...")
-
+        save_state = torch.load(MODEL_PATH)
+        model.load_state_dict(save_state['model_state_dict'])
+        optimizer.load_state_dict(save_state['optimizer_state_dict'])
     else:
         print("No model found. Initiating training...")
-
         # a model is trained and saved to evaluate at a later time
-        num_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
         train_without_eval(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
         torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
             }, MODEL_PATH)
+        
+    print("Predicting...")
+    predict(model, optimizer, scheduler, opt)
 
-    save_state = torch.load(MODEL_PATH)
-    model.load_state_dict(save_state['model_state_dict'])
-    optimizer.load_state_dict(save_state['optimizer_state_dict'])
     print("start evaluation:")
     eval_by_gupta(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
-
 
 def boolean_string(s):
     if s not in {'False', 'True'}:
