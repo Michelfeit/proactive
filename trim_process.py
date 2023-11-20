@@ -92,6 +92,7 @@ def pad_type(insts):
 def collate_trim_fn(insts):
     # how do i get trim_times in here IT COMES FROM TRIM ITEM
     time, time_gap, event_type, event_goal, trim_time, trim_gap, trim_event_type, trim_event_goal = list(zip(*insts))
+   
     time = pad_time(time)
     time_gap = pad_time(time_gap)
     event_type = pad_type(event_type)

@@ -9,6 +9,7 @@ from tqdm import tqdm
 from pathlib import Path
 
 import myTransformer.Constants as Constants
+import myTransformer.MyUtils as MyUtils
 import myTransformer.Utils as Utils
 from data_preparation import initial_dataloader_preparation
 from data_preparation import get_prediction_loader, load_prediciton_data
@@ -68,7 +69,8 @@ def predict(model, optimizer, scheduler, opt):
             pred_time_gap = []
             pred_event_type = []
             pred_event_goal = []
-            
+            ## for debugging purposes
+            j = 0
             for batch in predictionloader:
                 event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
                 sequence_ended = [False] * len(trim_type)
@@ -80,11 +82,11 @@ def predict(model, optimizer, scheduler, opt):
                         sequence_ended[seq] = True
 
                 # get next event predicitons  
-                pred_types, all_types  = Utils.get_next_type_prediction(prediction[0], trim_type)
+                pred_types, all_types  = MyUtils.get_next_type_prediction(prediction[0], trim_type)
                 # event times
-                pred_times, all_times = Utils.get_next_time_prediction(prediction[1], trim_time)
+                pred_times, all_times = MyUtils.get_next_time_prediction(prediction[1], trim_time)
                 # goals
-                pred_goals = Utils.get_next_goal_prediciton(prediction[2],trim_goal)
+                pred_goals = MyUtils.get_next_goal_prediciton(prediction[2],trim_goal)
                 
                 # whenever a sequence in that batch ended, swap prediction with a zero
                 for seq in range(len(trim_type)):
@@ -96,11 +98,25 @@ def predict(model, optimizer, scheduler, opt):
                 pred_event_type += [element.item() for element in pred_types]
                 pred_time_gap += [element.item() for element in pred_times]
                 pred_event_goal += [element.item() for element in pred_goals]
+                ## for debugging purposes
+                j+=1
+                if(j == 19):
+                    print("Step:", j)
+                    print("truth:")
+                    print(event_type)
+                    print("predicitons:")
+                    print(trim_type)
+                    # print("times:")
+                    # print(trim_time)
+                    print()
+
             i += 1
-            print("PRediciton number:", i)
+            print("Prediciton number:", i)
             # TODO: Change Termination Criterion to "no new predictions added" 
-            if(i == 20):
+            if(i == 3):
                 predicting = False
+    #TODO: evaluate predicitons with original test data         
+
     
 
 def eval_prediction():
@@ -233,7 +249,7 @@ def train_without_eval(model, training_data, test_data, optimizer, scheduler, pr
         train_event, train_type, train_goal, train_time = train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt)
         print('(Training) Acc: {type: 8.5f}, MAE: {mae: 8.5f}, Itv. GPA: {goal: 8.5f}'.format(type=train_type, mae=train_time, goal=train_goal))
 
-#python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 1 -proactive=False
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 1 -proactive=False
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-data', required=True)
