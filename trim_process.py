@@ -8,13 +8,6 @@ class EventData_Trim(EventData):
     def __init__(self, data, alpha):
         super().__init__(data)
         self.alpha = alpha
-        # self.time = [[elem['time_since_start'] for elem in inst] for inst in data]
-        # self.time_gap = [[elem['time_since_last_event'] for elem in inst] for inst in data]
-        # self.event_type = [[elem['type_event'] + 1 for elem in inst] for inst in data]
-        # self.event_goal = [[elem['type_goal'] for elem in inst] for inst in data]
-        # self.length = len(data)
-        # print(self.length)
-
         # get a list if indeces that stand for the index to be trimmed for ewach sequence
         indeces = []
         for seq in self.time:
@@ -82,7 +75,6 @@ def pad_time(insts):
 
 def pad_type(insts):
     max_len = max(len(inst) for inst in insts)
-
     batch_seq = np.array([
         inst + [Constants.PAD] * (max_len - len(inst))
         for inst in insts])

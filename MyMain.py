@@ -20,6 +20,8 @@ from myTransformer.Models import Transformer
 import pdb
 
 MODEL_PATH = "trainedModels\\transformer50.pth.tar"
+LONGEST_TEST_ACTION_SEQUENCE = 20
+LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]
 
 # the original train method used in the proactive paper
 def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
@@ -62,6 +64,8 @@ def predict(model, optimizer, scheduler, opt):
     with torch.no_grad():
         i = 0
         while(predicting):
+            print("step:", i)
+            i += 1
             # add the gap times to the last time when concatting
             trim_event_data.concat_predictions(pred_time_gap, pred_event_type, pred_event_goal)
             predictionloader = get_prediction_loader(opt, trim_event_data)
@@ -70,16 +74,19 @@ def predict(model, optimizer, scheduler, opt):
             pred_event_type = []
             pred_event_goal = []
             ## for debugging purposes
-            j = 0
+            predicting = False
             for batch in predictionloader:
                 event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
-                sequence_ended = [False] * len(trim_type)
-                enc_out, prediction = model(trim_type, trim_time)
-
                 # find out if a sequence ended
+                sequence_ended = [False] * len(trim_type)
                 for seq in range(len(trim_type)):
                     if 1 in trim_type[seq][1:]:
                         sequence_ended[seq] = True
+                    else:
+                        # once a sequence is ofund that has not yet ended, flag is set and predicition keeps on looping
+                        predicting = True
+
+                enc_out, prediction = model(trim_type, trim_time)
 
                 # get next event predicitons  
                 pred_types, all_types  = MyUtils.get_next_type_prediction(prediction[0], trim_type)
@@ -98,24 +105,14 @@ def predict(model, optimizer, scheduler, opt):
                 pred_event_type += [element.item() for element in pred_types]
                 pred_time_gap += [element.item() for element in pred_times]
                 pred_event_goal += [element.item() for element in pred_goals]
-                ## for debugging purposes
-                j+=1
-                if(j == 19):
-                    print("Step:", j)
-                    print("truth:")
-                    print(event_type)
-                    print("predicitons:")
-                    print(trim_type)
-                    # print("times:")
-                    # print(trim_time)
-                    print()
 
-            i += 1
-            print("Prediciton number:", i)
-            # TODO: Change Termination Criterion to "no new predictions added" 
-            if(i == 3):
-                predicting = False
-    #TODO: evaluate predicitons with original test data         
+                # no need to continue prediciton once the sequence exeeds the longest action sequence in test set
+                if(i > LONGEST_TEST_ACTION_SEQUENCE):
+                    predicting = False
+    #TODO: evaluate predicitons with original test data
+        #for beta in LIST_OF_BETA_VALUES:
+            # get beta of the remaining ground truths in prediciton_data
+
 
     
 

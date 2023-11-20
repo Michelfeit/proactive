@@ -28,7 +28,6 @@ def pad_time(insts):
 
 def pad_type(insts):
     max_len = max(len(inst) for inst in insts)
-
     batch_seq = np.array([
         inst + [Constants.PAD] * (max_len - len(inst))
         for inst in insts])
