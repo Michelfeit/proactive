@@ -207,7 +207,6 @@ class Transformer(nn.Module):
                 type_prediction: batch*seq_len*num_classes (not normalized);
                 time_prediction: batch*seq_len.
         """
-
         non_pad_mask = get_non_pad_mask(event_type)
 
         enc_output = self.encoder(event_type, event_time, non_pad_mask)
@@ -219,6 +218,8 @@ class Transformer(nn.Module):
         time_prediction = self.time_log(time_prediction, non_pad_mask)
 
         type_prediction = self.type_predictor(enc_output, non_pad_mask)
+        # print(type_prediction[:, :-1, :])
+        # print(type_prediction[:, :-1, :].shape)
 
         goal_prediction = self.goal_predictor(enc_output, non_pad_mask)
 

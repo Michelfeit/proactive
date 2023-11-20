@@ -40,20 +40,27 @@ class EventData_Trim(EventData):
             event_goal.append(self.event_goal[i][:index])
             i += 1
         
-        self.time = time
-        self.time_gap = time_gap
-        self.event_type = event_type
-        self.event_goal = event_goal
+        self.trim_time = time
+        self.trim_time_gap = time_gap
+        self.trim_event_type = event_type
+        self.trim_event_goal = event_goal
 
-    def concat_predictions(self, pred_time, pred_time_gap, pred_event_type, pred_event_goal):
-        if not pred_time:
+        # self.time = time
+        # self.time_gap = time_gap
+        # self.event_type = event_type
+        # self.event_goal = event_goal
+
+    def concat_predictions(self, pred_time_gap, pred_event_type, pred_event_goal):
+        if not pred_time_gap:
            return
-        assert(len(pred_time) == len(pred_time_gap) == len(pred_event_type) == len(pred_event_goal) == self.length)
+        assert(len(pred_time_gap) == len(pred_event_type) == len(pred_event_goal) == self.length)
         for i in range(self.length):
-            self.time.append(pred_time[i])
-            self.time.append(pred_time_gap[i])
-            self.time.append(pred_event_type[i])
-            self.time.append(pred_event_goal[i])
+            # print(self.trim_time)
+            # print(self.trim_time[-1])
+            self.trim_time[i].append(self.trim_time[i][-1] + pred_time_gap[i])
+            self.trim_time_gap[i].append(pred_time_gap[i])
+            self.trim_event_type[i].append(pred_event_type[i])
+            self.trim_event_goal[i].append(pred_event_goal[i])
 
     # def _assert_same_length(pred_time, pred_time_gap, pred_event_type, pred_event_goal):
     #     return len(pred_time) == self.length
@@ -62,7 +69,8 @@ class EventData_Trim(EventData):
         return self.length
 
     def __getitem__(self, idx):
-        return self.time[idx], self.time_gap[idx], self.event_type[idx], self.event_goal[idx]
+        #trims = (self.trim_time[idx], self.trim_time_gap[idx], self.trim_event_type[idx], self.trim_event_goal[idx])
+        return self.time[idx], self.time_gap[idx], self.event_type[idx], self.event_goal[idx], self.trim_time[idx], self.trim_time_gap[idx], self.trim_event_type[idx], self.trim_event_goal[idx]
 
 def pad_time(insts):
     max_len = max(len(inst) for inst in insts)
@@ -82,12 +90,19 @@ def pad_type(insts):
     return torch.tensor(batch_seq, dtype=torch.long)
 
 def collate_trim_fn(insts):
-    time, time_gap, event_type, event_goal = list(zip(*insts))
+    # how do i get trim_times in here IT COMES FROM TRIM ITEM
+    time, time_gap, event_type, event_goal, trim_time, trim_gap, trim_event_type, trim_event_goal = list(zip(*insts))
     time = pad_time(time)
     time_gap = pad_time(time_gap)
     event_type = pad_type(event_type)
     event_goal = pad_type(event_goal)
-    return time, time_gap, event_type, event_goal
+
+    trim_time = pad_time(trim_time)
+    trim_gap = pad_time(trim_gap)
+    trim_event_type = pad_type(trim_event_type)
+    trim_event_goal = pad_type(trim_event_goal)
+    
+    return time, time_gap, event_type, event_goal, trim_time, trim_gap, trim_event_type, trim_event_goal
 
 def get_trim_dataloader(ds, batch_size, shuffle=True, alpha= .3):
     #pass ds as argument in order to be able to concat data

@@ -63,12 +63,32 @@ def log_likelihood(model, data, time, types):
     type_lambda = torch.sum(all_lambda * type_mask, dim=2)
 
     event_ll = compute_event(type_lambda, non_pad_mask)
+    # print("1:")
+    # print(event_ll)
     event_ll = torch.sum(event_ll, dim=-1)
+    # print("2:")
+    # print(event_ll)
+    # print()
 
     non_event_ll = compute_integral_unbiased(model, data, time, non_pad_mask, type_mask)
     non_event_ll = torch.sum(non_event_ll, dim=-1)
 
     return event_ll, non_event_ll
+
+def get_next_type_prediction(prediction, data):
+    pred_type = torch.max(prediction, dim=-1)[1]
+    preds = []
+    j = 0
+    for sequence in data:
+        i = 0
+        for action in sequence:
+            if(action == 0):
+                break
+            i += 1
+        preds.append(pred_type[j][i-1])
+        j+=1
+    next_action = torch.tensor(preds) + 1
+    return next_action, pred_type
 
 def type_loss(prediction, types, loss_func):
     # What is types:
@@ -77,12 +97,10 @@ def type_loss(prediction, types, loss_func):
     # What is types[:, 1:] - 1 -> truth?
     # the first entry of each action sequence is discarded and also every entry is substracted by one
 
-
     # ground truths given by test data
     truth = types[:, 1:] - 1
     prediction = prediction[:, :-1, :]
     pred_type = torch.max(prediction, dim=-1)[1]
-    
     correct_num = torch.sum(pred_type == truth)
 
     if isinstance(loss_func, LabelSmoothingLoss):
@@ -130,21 +148,55 @@ def pred_goal(prediction, types):
         else:
             preds.append(pred_type[i][id_[0][0]-1])
         trs.append(truth[i][0])
-
     correct_num = np.sum(preds == trs)
     correct_num = torch.tensor([correct_num])
     total_seqs = torch.tensor([truth.shape[0]-1])
     return correct_num, total_seqs
 
+def get_next_goal_prediciton(prediction, types):
+    truth = types[:, 1:] - 1
+    prediction = prediction[:, :-1, :]
+
+    pred_type = torch.max(prediction, dim=-1)[1]
+    pred_type = pred_type.cpu().detach().numpy()
+    truth = truth.cpu().detach().numpy()
+
+    preds = []
+    trs = []
+    for i in range(len(truth)):
+        id_ = np.argwhere(truth[i] == -1)
+        if len(id_) == 0:
+            preds.append(pred_type[i][-1])
+        else:
+            preds.append(pred_type[i][id_[0][0]-1])
+        trs.append(truth[i][0])
+    return preds
+
+
 def time_loss(prediction, event_time):
     prediction.squeeze_(-1)
     true = event_time[:, 1:] - event_time[:, :-1]
     prediction = prediction[:, :-1]
-
     diff =  true - prediction
     se = torch.sum(torch.abs(diff))
 
     return se
+
+def get_next_time_prediction(prediction, data):
+    prediction.squeeze_(-1)
+    preds = []
+    j = 0
+    for sequence in data:
+        i = 0
+        for action in sequence[1:]:
+            if(action == 0):
+                break
+            i += 1
+        preds.append(prediction[j][i])
+        
+        j+=1
+    next_time = torch.tensor(preds)
+    return next_time, prediction
 
 class LabelSmoothingLoss(nn.Module):
     def __init__(self, label_smoothing, tgt_vocab_size, ignore_index=-100):

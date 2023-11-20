@@ -18,7 +18,7 @@ from trim_process import EventData_Trim, get_trim_dataloader
 from myTransformer.Models import Transformer
 import pdb
 
-MODEL_PATH = "trainedModels\\transformer01.pth.tar"
+MODEL_PATH = "trainedModels\\transformer50.pth.tar"
 
 # the original train method used in the proactive paper
 def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
@@ -57,18 +57,51 @@ def predict(model, optimizer, scheduler, opt):
     pred_event_goal = []
 
     predicting = True
-    while(predicting):
-        trim_event_data.concat_predictions(pred_time, pred_time_gap, pred_event_type, pred_event_goal)
-        predictionloader = get_prediction_loader(opt, trim_event_data)
+    model.eval()
+    with torch.no_grad():
         i = 0
-        for batch in predictionloader:
-            event_time, time_gap, event_type, event_goal = map(lambda x: x.to(opt.device), batch)
-            if(i % 5 == 0):
-                print(event_type)
+        while(predicting):
+            # add the gap times to the last time when concatting
+            trim_event_data.concat_predictions(pred_time_gap, pred_event_type, pred_event_goal)
+            predictionloader = get_prediction_loader(opt, trim_event_data)
+            pred_time = []
+            pred_time_gap = []
+            pred_event_type = []
+            pred_event_goal = []
+            
+            for batch in predictionloader:
+                event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
+                sequence_ended = [False] * len(trim_type)
+                enc_out, prediction = model(trim_type, trim_time)
+
+                # find out if a sequence ended
+                for seq in range(len(trim_type)):
+                    if 1 in trim_type[seq][1:]:
+                        sequence_ended[seq] = True
+
+                # get next event predicitons  
+                pred_types, all_types  = Utils.get_next_type_prediction(prediction[0], trim_type)
+                # event times
+                pred_times, all_times = Utils.get_next_time_prediction(prediction[1], trim_time)
+                # goals
+                pred_goals = Utils.get_next_goal_prediciton(prediction[2],trim_goal)
+                
+                # whenever a sequence in that batch ended, swap prediction with a zero
+                for seq in range(len(trim_type)):
+                    if(sequence_ended[seq]):
+                        pred_types[seq] = torch.tensor(0)
+                        pred_times[seq] = torch.tensor(0)
+                        pred_goals[seq] = torch.tensor(0)
+
+                pred_event_type += [element.item() for element in pred_types]
+                pred_time_gap += [element.item() for element in pred_times]
+                pred_event_goal += [element.item() for element in pred_goals]
             i += 1
+            print("PRediciton number:", i)
+            # TODO: Change Termination Criterion to "no new predictions added" 
             if(i == 20):
                 predicting = False
-    return
+    
 
 def eval_prediction():
     return
@@ -139,21 +172,10 @@ def eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt):
     with torch.no_grad():
         i = 0
         for batch in tqdm(test_data, mininterval=2, desc='  - (Validation) ', leave=False):
+            i += 1
+            # print(i)
             event_time, time_gap, event_type, event_goal = map(lambda x: x.to(opt.device), batch)
-            ## a batch is a subset of the testdata. our batchsize is 4. This way, the batch consists of 4 event_types and event_times as specified in
-            ## the datasets. Also so list of types and times is filled at the end with zeros to fit action with the most amount of events per batch.
-
-            ## For the first batch, 
-            ## - the event_type tensor looks like this:
-            ##      [[ 1, 19, 20, 22,  1,  0,  0,  0],
-            ##       [ 1, 19, 20, 22,  1,  0,  0,  0],
-            ##       [ 1, 20, 22,  1,  0,  0,  0,  0],
-            ##       [ 1, 16, 21, 19, 23, 20, 22,  1]]
-            ## - the event_times look like this:
-            ##      [[0.0000, 0.0217, 0.2955, 1.2562, 1.7056, 0.0000, 0.0000, 0.0000],
-            ##       [0.0000, 0.0640, 0.1787, 0.7769, 0.9215, 0.0000, 0.0000, 0.0000],
-            ##       [0.0000, 0.1374, 0.4742, 0.5837, 0.0000, 0.0000, 0.0000, 0.0000],
-            ##       [0.0000, 0.0475, 0.1694, 0.2562, 0.4287, 0.4587, 1.0434, 1.2531]]
+            
 
             enc_out, prediction = model(event_type, event_time)
 
@@ -162,6 +184,13 @@ def eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt):
             
             event_loss = -torch.sum(event_ll - non_event_ll)
             _, pred_num = Utils.type_loss(prediction[0], event_type, pred_loss_func)
+
+            # if(i == 10):
+            #     print("types:")
+            #     print(event_type)
+            #     print("num")
+            #     print(pred_num)
+
             pred_goal, seq_num = Utils.pred_goal(prediction[2], event_goal)
             se = Utils.time_loss(prediction[1], event_time)
 
