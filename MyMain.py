@@ -75,6 +75,7 @@ def predict(model, optimizer, scheduler, opt):
             pred_event_goal = []
             ## for debugging purposes
             predicting = False
+            j = 0
             for batch in predictionloader:
                 event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
                 # find out if a sequence ended
@@ -105,13 +106,28 @@ def predict(model, optimizer, scheduler, opt):
                 pred_event_type += [element.item() for element in pred_types]
                 pred_time_gap += [element.item() for element in pred_times]
                 pred_event_goal += [element.item() for element in pred_goals]
+                j += 1
+                if(j == 19):
+                    print(trim_type)
 
-                # no need to continue prediciton once the sequence exeeds the longest action sequence in test set
-                if(i > LONGEST_TEST_ACTION_SEQUENCE):
-                    predicting = False
+            # no need to continue prediciton once the sequence exeeds the longest action sequence in test set
+            # LONGEST_TEST_ACTION_SEQUENCE
+            if(i > 6):
+                predicting = False
     #TODO: evaluate predicitons with original test data
-        #for beta in LIST_OF_BETA_VALUES:
+        print("start evaluation:")
+        for beta in LIST_OF_BETA_VALUES:
             # get beta of the remaining ground truths in prediciton_data
+            pred_time, pred_time_gap, pred_type, pred_goal = trim_event_data.get_trim_data()
+            truths_time, truths_time_gap, truths_type, truths_goal = trim_event_data.get_beta_trimmed_truths(beta)
+            print(beta, ":")
+            print("Prediction:")
+            print(pred_type[75][:len(truths_type[75])])
+            print("Trimmed Truth:")
+            print(truths_type[75])
+            
+
+
 
 
     
@@ -197,12 +213,6 @@ def eval_epoch(model, test_data, pred_loss_func, pred_loss_goal, opt):
             
             event_loss = -torch.sum(event_ll - non_event_ll)
             _, pred_num = Utils.type_loss(prediction[0], event_type, pred_loss_func)
-
-            # if(i == 10):
-            #     print("types:")
-            #     print(event_type)
-            #     print("num")
-            #     print(pred_num)
 
             pred_goal, seq_num = Utils.pred_goal(prediction[2], event_goal)
             se = Utils.time_loss(prediction[1], event_time)
@@ -328,8 +338,8 @@ def run_action_prediciton(model, trainloader, testloader, optimizer, scheduler, 
     print("Predicting...")
     predict(model, optimizer, scheduler, opt)
 
-    print("start evaluation:")
-    eval_by_gupta(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
+    # print("start evaluation:")
+    # eval_by_gupta(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
 
 def boolean_string(s):
     if s not in {'False', 'True'}:
