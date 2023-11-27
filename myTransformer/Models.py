@@ -96,7 +96,6 @@ class Encoder(nn.Module):
                 slf_attn_mask=slf_attn_mask)
         return enc_output
 
-
 class Predictor(nn.Module):
     """ Prediction of next event type. """
 

@@ -29,6 +29,10 @@ class EventData_Trim(EventData):
         self.trim_event_type = event_type
         self.trim_event_goal = event_goal
 
+        print("EVENTDATA")
+        print(self.time[48])
+        print(self.trim_time[48])
+
     def concat_predictions(self, pred_time_gap, pred_event_type, pred_event_goal):
         if not pred_time_gap:
            return

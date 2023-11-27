@@ -7,6 +7,8 @@ import torch.nn.functional as F
 
 def get_next_type_prediction(prediction, data):
     pred_type = torch.max(prediction, dim=-1)[1]
+    # softmax on ptredicitons
+    # torch.sample
     preds = []
     j = 0
     for sequence in data:

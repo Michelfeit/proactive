@@ -1,6 +1,7 @@
 import pickle
 from process import get_dataloader
 from trim_process import get_trim_dataloader
+import sys
 
 def initial_dataloader_preparation(opt):
     print('Loading All Datasets...')
@@ -37,9 +38,21 @@ def load_prediciton_data(opt):
     pred_data, _, _ = _load_data(opt.data + 'test.pkl', 'test')
     return pred_data
 
-# def load_all_data(opt):
-#     train_data, num_types, num_goals = _load_data(opt.data + 'train.pkl', 'train')
-#     test_data, _, _ = _load_data(opt.data + 'test.pkl', 'test')
-#     pred_data = test_data
+def reverse_scale(opt):
+    in_file = open(opt.data+'/train_ti.txt', 'r')
+    times = [[float(y) for y in x.strip().split()] for x in in_file]
 
-#     return train_data, test_data, pred_data, num_types, num_goals
+    min = 10000
+    max = 0
+    scale = 10
+    # taken form develop_dumbs
+    for i in range(len(times)):
+        for j in range(len(times[i])):
+            val = float(times[i][j])
+            if(val > max):
+                max = val
+            if(val < min):
+                min = val
+    print(min, max)
+    # function that reverses the normalization that is applied on the event_times in develop_dumps.py
+    return lambda x: (x/scale * (max - min) ) - min
