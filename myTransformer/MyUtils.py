@@ -57,3 +57,40 @@ def get_next_goal_prediciton(prediction, types):
         trs.append(truth[i][0])
     return preds
 
+def reverse_time_normalization(opt):
+    in_file = open(opt.data+'/train_ti.txt', 'r')
+    times = [[float(y) for y in x.strip().split()] for x in in_file]
+
+    min = 10000
+    max = 0
+    scale = 10
+    # taken form develop_dumbs
+    for i in range(len(times)):
+        for j in range(len(times[i])):
+            val = float(times[i][j])
+            if(val > max):
+                max = val
+            if(val < min):
+                min = val
+    # function that reverses the normalization that is applied on the event_times in develop_dumps.py
+    return lambda x: (x/scale * (max - min) ) - min
+
+def time_normalization(opt):
+    in_file = open(opt.data+'/train_ti.txt', 'r')
+    times = [[float(y) for y in x.strip().split()] for x in in_file]
+
+    min = 10000
+    max = 0
+    scale = 10
+    # taken form develop_dumbs
+    for i in range(len(times)):
+        for j in range(len(times[i])):
+            val = float(times[i][j])
+            if(val > max):
+                max = val
+            if(val < min):
+                min = val
+    print(min, max)
+    # function that reverses the normalization that is applied on the event_times in develop_dumps.py
+    return lambda x: scale * (x - min)/(max - min)
+

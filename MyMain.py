@@ -12,7 +12,7 @@ import myTransformer.Constants as Constants
 import myTransformer.MyUtils as MyUtils
 import myTransformer.Utils as Utils
 from data_preparation import initial_dataloader_preparation
-from data_preparation import get_prediction_loader, load_prediciton_data, reverse_scale
+from data_preparation import get_prediction_loader, load_prediciton_data, load_test_eos_data
 from trim_process import EventData_Trim, get_trim_dataloader
 # from process import get_dataloader
 # from trim_process import get_trim_dataloader, EventData_Trim
@@ -49,9 +49,8 @@ def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func,
         scheduler.step()
 
 def predict(model, optimizer, scheduler, opt):
-    reverse_scale(opt)
-    return
     pred_data = load_prediciton_data(opt)
+    eos_test_ti = load_test_eos_data(opt)
     # trim_event_data encapsules trimmed down versions of action sequences contained in the test.pkl
     # during this prediction, the eventdata ought to be concatenated with predictions by the model
     trim_event_data = EventData_Trim(pred_data, .3)
@@ -60,6 +59,9 @@ def predict(model, optimizer, scheduler, opt):
     pred_time_gap = []
     pred_event_type = []
     pred_event_goal = []
+
+    # function that turns times back into seconds
+    times_in_seconds = MyUtils.reverse_time_normalization(opt)
 
     predicting = True
     model.eval()
@@ -80,6 +82,15 @@ def predict(model, optimizer, scheduler, opt):
             j = 0
             for batch in predictionloader:
                 event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
+                #print("hi")
+                for seq in range(len(event_time)):
+                    j+=1
+                    orig = list(map(times_in_seconds, event_time[seq]))
+                    orig = list(map(lambda x: float(round(x.item())), orig))
+
+                    print(j, ":", orig)
+                #print(event_time)
+                continue
                 # find out if a sequence ended
                 sequence_ended = [False] * len(trim_type)
                 for seq in range(len(trim_type)):
@@ -108,75 +119,67 @@ def predict(model, optimizer, scheduler, opt):
                 pred_event_type += [element.item() for element in pred_types]
                 pred_time_gap += [element.item() for element in pred_times]
                 pred_event_goal += [element.item() for element in pred_goals]
-                
-                
-                # if(j == 18):
-                #     print(j)
-                #     print(pred_types)
-                #     print(trim_type)
                 j += 1
 
-            # no need to continue prediciton once the sequence exeeds the longest action sequence in test set
             # LONGEST_TEST_ACTION_SEQUENCE
             if(i > LONGEST_TEST_ACTION_SEQUENCE):
                 predicting = False
-    #TODO: evaluate predicitons with original test data
-        print("start evaluation:")
-        evaluation = [(0,0)] * len(LIST_OF_BETA_VALUES)
-        for beta in range(len(LIST_OF_BETA_VALUES)):
-            # the predicitons beta-trimmed
-            pred_time, pred_time_gap, pred_type, pred_goal = trim_event_data.get_trim_data()
-            # the ground truth beta-trimmed
-            truths_time, truths_time_gap, truths_type, truths_goal = trim_event_data.get_beta_trimmed_truths(LIST_OF_BETA_VALUES[beta])
-            num_correct = 0
-            num_total = 0
-            for i in range(len(pred_type)):
-                    
-                tru = truths_type[i][trim_event_data.alpha_indeces[i]:]
-                pred = pred_type[i][trim_event_data.alpha_indeces[i]:len(truths_type[i])]
-                assert(len(tru) == len(pred))
-                if(len(tru)==0):
-                    continue
-                num_correct += np.sum(tru == pred)
-                num_total += len(tru)
-                if(beta == 0):
-                    print(i)
-                    print(tru)
-                    print(pred)
-                    print(num_correct, num_total)
-                    print()
-            evaluation[beta] = [LIST_OF_BETA_VALUES[beta], num_correct/num_total ]
-        for value in evaluation:
-            print("{beta}: {mean_over_class:2f}%".format(beta=value[0], mean_over_class=value[1]*100))
-            #################
-            ### DEBUGGING ###
-            #################
-            # index = 48
-            # print(beta, ":")
-            # print()
-            # print("Truth:")
-            # print(trim_event_data.event_type[index])
-            # print("Prediction:")
-            # print(pred_type[index])
-            # print()
-            # print("Beta-trimmed Truth:")
-            # print(truths_type[index])
-            # print("Beta-Trimmed prediction")
-            # print(pred_type[index][:len(truths_type[index])])
-            # print()
-            # print("alpha-cut truths")
-            # print(truths_type[index][trim_event_data.alpha_indeces[index]:])
-            # print("alpha-cut predicitons")
-            # print(pred_type[index][trim_event_data.alpha_indeces[index]:])
-            # print()
-            # print("alpha-cut, beta-trimmed truths")
-            # print(truths_type[index][trim_event_data.alpha_indeces[index]:])
-            # print("alpha-cut, beta-trimmed predicitons")
-            # print(pred_type[index][trim_event_data.alpha_indeces[index]:len(truths_type[index])])
-            # print()
+        print("DONE")
+        return
+        eval_prediction(trim_event_data)
 
-def eval_prediction():
-    return
+def eval_prediction(trim_event_data):
+    print("Start evaluation:")
+    debugging = False
+    evaluation = [(0,0)] * len(LIST_OF_BETA_VALUES)
+    for beta in range(len(LIST_OF_BETA_VALUES)):
+        # the predicitons beta-trimmed
+        pred_time, pred_time_gap, pred_type, pred_goal = trim_event_data.get_trim_data()
+        # the ground truth beta-trimmed
+        truths_time, truths_time_gap, truths_type, truths_goal = trim_event_data.get_beta_trimmed_truths(LIST_OF_BETA_VALUES[beta])
+        num_correct = 0
+        num_total = 0
+        for i in range(len(pred_type)):
+                
+            tru = truths_type[i][trim_event_data.alpha_indeces[i]:]
+            pred = pred_type[i][trim_event_data.alpha_indeces[i]:len(truths_type[i])]
+            assert(len(tru) == len(pred))
+            if(len(tru)==0):
+                continue
+            num_correct += np.sum(tru == pred)
+            num_total += len(tru)
+
+        evaluation[beta] = [LIST_OF_BETA_VALUES[beta], num_correct/num_total ]
+    for value in evaluation:
+        print("{beta}: {mean_over_class:2f}%".format(beta=value[0], mean_over_class=value[1]*100))
+
+    #################
+    ### DEBUGGING ###
+    #################
+    if(debugging):
+        index = 48
+        print(beta, ":")
+        print()
+        print("Truth:")
+        print(trim_event_data.event_type[index])
+        print("Prediction:")
+        print(pred_type[index])
+        print()
+        print("Beta-trimmed Truth:")
+        print(truths_type[index])
+        print("Beta-Trimmed prediction")
+        print(pred_type[index][:len(truths_type[index])])
+        print()
+        print("alpha-cut truths")
+        print(truths_type[index][trim_event_data.alpha_indeces[index]:])
+        print("alpha-cut predicitons")
+        print(pred_type[index][trim_event_data.alpha_indeces[index]:])
+        print()
+        print("alpha-cut, beta-trimmed truths")
+        print(truths_type[index][trim_event_data.alpha_indeces[index]:])
+        print("alpha-cut, beta-trimmed predicitons")
+        print(pred_type[index][trim_event_data.alpha_indeces[index]:len(truths_type[index])])
+        print()
 
 def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt):
     model.train()
