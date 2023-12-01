@@ -29,8 +29,8 @@ def get_prediction_loader(opt, data):
     return pred_data
     
 def load_prediciton_data(opt):
-    pred_data, _, _ = _load_data(opt.data + 'test.pkl', 'test')
-    return pred_data
+    pred_data, num_types, _ = _load_data(opt.data + 'test.pkl', 'test')
+    return pred_data, num_types
 
 def load_test_eos_data(opt):
     eos_times = []
@@ -39,4 +39,5 @@ def load_test_eos_data(opt):
             # Convert each line to a float and add it to the array
             time = float(line.strip())
             eos_times.append(time)
+    return eos_times
 

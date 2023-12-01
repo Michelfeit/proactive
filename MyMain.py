@@ -1,4 +1,5 @@
 import argparse
+import math
 import numpy as np
 import pickle
 import time
@@ -19,9 +20,11 @@ from trim_process import EventData_Trim, get_trim_dataloader
 from myTransformer.Models import Transformer
 import pdb
 
-MODEL_PATH = "trainedModels\\transformer50.pth.tar"
+MODEL_PATH = "trainedModels\\transformer50relu.pth.tar"
 LONGEST_TEST_ACTION_SEQUENCE = 20
+ALPHA = .3
 LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]
+BREAKFAST_FRAME_RATE = 15
 
 # the original train method used in the proactive paper
 def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
@@ -49,11 +52,12 @@ def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func,
         scheduler.step()
 
 def predict(model, optimizer, scheduler, opt):
-    pred_data = load_prediciton_data(opt)
+    pred_data, num_types = load_prediciton_data(opt)
     eos_test_ti = load_test_eos_data(opt)
+
     # trim_event_data encapsules trimmed down versions of action sequences contained in the test.pkl
     # during this prediction, the eventdata ought to be concatenated with predictions by the model
-    trim_event_data = EventData_Trim(pred_data, .3)
+    trim_event_data = EventData_Trim(pred_data, eos_test_ti, ALPHA)
     
     pred_time = []
     pred_time_gap = []
@@ -61,7 +65,7 @@ def predict(model, optimizer, scheduler, opt):
     pred_event_goal = []
 
     # function that turns times back into seconds
-    times_in_seconds = MyUtils.reverse_time_normalization(opt)
+    times_in_seconds = MyUtils.reverse_time_normalization()
 
     predicting = True
     model.eval()
@@ -80,32 +84,25 @@ def predict(model, optimizer, scheduler, opt):
             ## for debugging purposes
             predicting = False
             j = 0
+            
             for batch in predictionloader:
                 event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
-                #print("hi")
-                for seq in range(len(event_time)):
-                    j+=1
-                    orig = list(map(times_in_seconds, event_time[seq]))
-                    orig = list(map(lambda x: float(round(x.item())), orig))
-
-                    print(j, ":", orig)
-                #print(event_time)
-                continue
                 # find out if a sequence ended
                 sequence_ended = [False] * len(trim_type)
                 for seq in range(len(trim_type)):
                     if 1 in trim_type[seq][1:]:
                         sequence_ended[seq] = True
                     else:
-                        # once a sequence is ofund that has not yet ended, flag is set and predicition keeps on looping
+                        # once a sequence is found that has not yet ended, flag is set and predicition keeps on looping
                         predicting = True
 
                 enc_out, prediction = model(trim_type, trim_time)
-
+                
                 # get next event predicitons  
                 pred_types, all_types  = MyUtils.get_next_type_prediction(prediction[0], trim_type)
                 # event times
                 pred_times, all_times = MyUtils.get_next_time_prediction(prediction[1], trim_time)
+                #print(all_times)
                 # goals
                 pred_goals = MyUtils.get_next_goal_prediciton(prediction[2],trim_goal)
                 
@@ -119,68 +116,68 @@ def predict(model, optimizer, scheduler, opt):
                 pred_event_type += [element.item() for element in pred_types]
                 pred_time_gap += [element.item() for element in pred_times]
                 pred_event_goal += [element.item() for element in pred_goals]
-                j += 1
-
+                j +=1
             # LONGEST_TEST_ACTION_SEQUENCE
             if(i > LONGEST_TEST_ACTION_SEQUENCE):
                 predicting = False
         print("DONE")
-        return
-        eval_prediction(trim_event_data)
+        eval_prediction(trim_event_data, num_types)
 
-def eval_prediction(trim_event_data):
+def eval_prediction(trim_event_data, num_types):
     print("Start evaluation:")
-    debugging = False
-    evaluation = [(0,0)] * len(LIST_OF_BETA_VALUES)
     for beta in range(len(LIST_OF_BETA_VALUES)):
-        # the predicitons beta-trimmed
+        # the predicitons
         pred_time, pred_time_gap, pred_type, pred_goal = trim_event_data.get_trim_data()
-        # the ground truth beta-trimmed
-        truths_time, truths_time_gap, truths_type, truths_goal = trim_event_data.get_beta_trimmed_truths(LIST_OF_BETA_VALUES[beta])
-        num_correct = 0
-        num_total = 0
+        
+        # the ground truth
+        truths_time, truths_time_gap, truths_type, truths_goal = trim_event_data.get_truths()
+
+        num_correct = [0] * num_types
+        num_total = [0] * num_types
+
+        num_skips = 0
         for i in range(len(pred_type)):
-                
-            tru = truths_type[i][trim_event_data.alpha_indeces[i]:]
-            pred = pred_type[i][trim_event_data.alpha_indeces[i]:len(truths_type[i])]
-            assert(len(tru) == len(pred))
-            if(len(tru)==0):
+            if any(x < 0 for x in pred_time_gap[i]):
+                num_skips += 1
                 continue
-            num_correct += np.sum(tru == pred)
-            num_total += len(tru)
+            #convert to frames
+            truths_framedata = MyUtils.truth_to_frame_data(truths_time[i],truths_type[i])
+            preds_framedata = MyUtils.truth_to_frame_data(pred_time[i],pred_type[i])
+            #print()
+            # first frame of the prediciton
+            alpha_index = math.ceil(len(truths_framedata) * ALPHA) + 1
+            # first frame outside of prediciton window
+            beta_index = math.ceil(len(truths_framedata) * (ALPHA + LIST_OF_BETA_VALUES[beta])) + 1
+            len_dif = len(truths_framedata) - len( preds_framedata)
+            if(len_dif > 0):
+                preds_framedata.extend([preds_framedata[-1]] * len_dif)
 
-        evaluation[beta] = [LIST_OF_BETA_VALUES[beta], num_correct/num_total ]
-    for value in evaluation:
-        print("{beta}: {mean_over_class:2f}%".format(beta=value[0], mean_over_class=value[1]*100))
+            tru =  truths_framedata[alpha_index:beta_index]
+            pred = preds_framedata[alpha_index:beta_index]
 
-    #################
-    ### DEBUGGING ###
-    #################
-    if(debugging):
-        index = 48
-        print(beta, ":")
-        print()
-        print("Truth:")
-        print(trim_event_data.event_type[index])
-        print("Prediction:")
-        print(pred_type[index])
-        print()
-        print("Beta-trimmed Truth:")
-        print(truths_type[index])
-        print("Beta-Trimmed prediction")
-        print(pred_type[index][:len(truths_type[index])])
-        print()
-        print("alpha-cut truths")
-        print(truths_type[index][trim_event_data.alpha_indeces[index]:])
-        print("alpha-cut predicitons")
-        print(pred_type[index][trim_event_data.alpha_indeces[index]:])
-        print()
-        print("alpha-cut, beta-trimmed truths")
-        print(truths_type[index][trim_event_data.alpha_indeces[index]:])
-        print("alpha-cut, beta-trimmed predicitons")
-        print(pred_type[index][trim_event_data.alpha_indeces[index]:len(truths_type[index])])
-        print()
+            zips = zip(tru, pred)
+            for pair in zips:
+                if(pair[0] == pair[1]):
+                    num_correct[pair[0] - 1] += 1
+                num_total[pair[0] - 1] += 1
 
+        MOC_list = [-1] * num_types 
+        for index in range(num_types):
+            if(num_total[index] != 0):
+                MOC_list[index] = (num_correct[index]/num_total[index]) * 100
+
+        print(LIST_OF_BETA_VALUES[beta], MOC_list)
+
+        count = 0
+        percents = 0
+        for entry in MOC_list:
+            if(entry != -1):
+                count += 1
+                percents += entry
+        print(f"Mean over all classes{LIST_OF_BETA_VALUES[beta]}:", percents/count)
+
+        print("Skipped:" , num_skips)
+        
 def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt):
     model.train()
 
@@ -383,9 +380,6 @@ def run_action_prediciton(model, trainloader, testloader, optimizer, scheduler, 
         
     print("Predicting...")
     predict(model, optimizer, scheduler, opt)
-
-    # print("start evaluation:")
-    # eval_by_gupta(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
 
 def boolean_string(s):
     if s not in {'False', 'True'}:

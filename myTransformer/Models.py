@@ -99,14 +99,28 @@ class Encoder(nn.Module):
 class Predictor(nn.Module):
     """ Prediction of next event type. """
 
-    def __init__(self, dim, num_types):
+    # given flag, use positive activation function
+    def __init__(self, dim, num_types, fn_name):
         super().__init__()
 
         self.linear = nn.Linear(dim, num_types, bias=False)
         nn.init.xavier_normal_(self.linear.weight)
 
+        fn_dict = {
+            "relu": nn.ReLU(),
+            "softplus": nn.Softplus(beta=1, threshold=400),
+            "elu": nn.ELU(),
+            "default": lambda x: x
+        }
+        self.softplus = False
+        assert fn_name in fn_dict
+        if(fn_name == "softplus"):
+            self.softplus = True
+        self.fn = fn_dict[fn_name]
+
     def forward(self, data, non_pad_mask):
         out = self.linear(data)
+        out = self.fn(out)
         out = out * non_pad_mask
         return out
 
@@ -185,16 +199,16 @@ class Transformer(nn.Module):
         self.rnn = RNN_layers(d_model, d_rnn)
 
         # prediction of next time stamp
-        self.time_predictor = Predictor(d_model, 1)
+        self.time_predictor = Predictor(d_model, 1, "relu")
 
         # Adding log-normal 
         self.time_log = LG()
 
         # prediction of next event type
-        self.type_predictor = Predictor(d_model, num_types)
+        self.type_predictor = Predictor(d_model, num_types, "default")
 
         # prediction of sequence goal
-        self.goal_predictor = Predictor(d_model, num_goals)
+        self.goal_predictor = Predictor(d_model, num_goals, "default")
 
     def forward(self, event_type:torch.Tensor, event_time):
         """
@@ -217,8 +231,6 @@ class Transformer(nn.Module):
         time_prediction = self.time_log(time_prediction, non_pad_mask)
 
         type_prediction = self.type_predictor(enc_output, non_pad_mask)
-        # print(type_prediction[:, :-1, :])
-        # print(type_prediction[:, :-1, :].shape)
 
         goal_prediction = self.goal_predictor(enc_output, non_pad_mask)
 

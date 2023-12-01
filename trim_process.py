@@ -3,11 +3,21 @@ import torch
 import torch.utils.data
 from transformer import Constants
 from process import EventData
+import myTransformer.MyUtils as MyUtils
+import copy
 
 class EventData_Trim(EventData):
-    def __init__(self, data, alpha):
+    def __init__(self, data, eos_data, alpha):
         super().__init__(data)
+        normalize_time = MyUtils.time_normalization()
         self.alpha = alpha
+
+        # complete action sequence times, the last entry is the time where the last action ends
+        self.complete_time = copy.deepcopy(self.time)
+        assert(len(self.complete_time) == len(eos_data))
+        for seq_index in range(len(eos_data)):
+            self.complete_time[seq_index].append(normalize_time(eos_data[seq_index]))
+
         # get a list if indeces that stand for the index to be trimmed for each sequence
         self.alpha_indeces = self.get_alpha_trimmed_indeces()
         time = []
@@ -29,10 +39,6 @@ class EventData_Trim(EventData):
         self.trim_event_type = event_type
         self.trim_event_goal = event_goal
 
-        print("EVENTDATA")
-        print(self.time[48])
-        print(self.trim_time[48])
-
     def concat_predictions(self, pred_time_gap, pred_event_type, pred_event_goal):
         if not pred_time_gap:
            return
@@ -46,7 +52,8 @@ class EventData_Trim(EventData):
     # provides the index (excluded) of the last action within the alpha-percentile window of each sequence
     def get_alpha_trimmed_indeces(self):
         indeces = []
-        for seq in self.time:
+        # use complete time sequence for trimming
+        for seq in self.complete_time:
             limit = seq[-1] * self.alpha
             index = 0
             for i in range(seq.__len__()):
@@ -59,11 +66,15 @@ class EventData_Trim(EventData):
     def get_trim_data(self):
         return self.trim_time, self.trim_time_gap, self.trim_event_type, self.trim_event_goal
     
+    def get_truths(self):
+        return self.complete_time, self.time_gap, self.event_type, self.event_goal
+    
     #for a given beta, get truths trimmed down to alpha + alpha
     def get_beta_trimmed_truths(self, beta):
         
         indeces = []
-        for seq in self.time:
+        # use complete time sequence for trimming
+        for seq in  self.complete_time:
             limit = seq[-1] * (self.alpha + beta)
             index = 0
             for i in range(seq.__len__()):
@@ -84,10 +95,6 @@ class EventData_Trim(EventData):
             event_goal.append(self.event_goal[i][:index])
             i += 1
         return time, time_gap, event_type, event_goal
-        
-    # trims lists of data down, given a list of indeces(excluded)
-    #def trim_data(indeces):
-
 
     def __len__(self):
         return self.length
