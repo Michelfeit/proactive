@@ -20,7 +20,7 @@ from trim_process import EventData_Trim, get_trim_dataloader
 from myTransformer.Models import Transformer
 import pdb
 
-MODEL_PATH = "trainedModels\\transformer50relu.pth.tar"
+MODEL_PATH = "trainedModels\\transformer50softplus.pth.tar"
 LONGEST_TEST_ACTION_SEQUENCE = 20
 ALPHA = .3
 LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]

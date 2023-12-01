@@ -108,14 +108,11 @@ class Predictor(nn.Module):
 
         fn_dict = {
             "relu": nn.ReLU(),
-            "softplus": nn.Softplus(beta=1, threshold=400),
+            "softplus": nn.Softplus(beta=1, threshold=20),
             "elu": nn.ELU(),
             "default": lambda x: x
         }
-        self.softplus = False
         assert fn_name in fn_dict
-        if(fn_name == "softplus"):
-            self.softplus = True
         self.fn = fn_dict[fn_name]
 
     def forward(self, data, non_pad_mask):
@@ -199,7 +196,7 @@ class Transformer(nn.Module):
         self.rnn = RNN_layers(d_model, d_rnn)
 
         # prediction of next time stamp
-        self.time_predictor = Predictor(d_model, 1, "relu")
+        self.time_predictor = Predictor(d_model, 1, "softplus")
 
         # Adding log-normal 
         self.time_log = LG()
