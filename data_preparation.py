@@ -9,7 +9,7 @@ def initial_dataloader_preparation(opt):
     print(num_types, num_goals)
     test_data, _, _ = _load_data(opt.data + 'test.pkl', 'test')
 
-    trainloader = get_dataloader(train_data, opt.batch_size, shuffle=False)
+    trainloader = get_dataloader(train_data, opt.batch_size, shuffle=True)
     testloader = get_dataloader(test_data, opt.batch_size, shuffle=False)
      # add third type of data that trims the test data down to a given percentile
     return trainloader, testloader, num_types, num_goals

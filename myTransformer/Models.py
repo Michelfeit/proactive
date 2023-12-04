@@ -196,7 +196,7 @@ class Transformer(nn.Module):
         self.rnn = RNN_layers(d_model, d_rnn)
 
         # prediction of next time stamp
-        self.time_predictor = Predictor(d_model, 1, "softplus")
+        self.time_predictor = Predictor(d_model, 1, "default")
 
         # Adding log-normal 
         self.time_log = LG()

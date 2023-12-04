@@ -20,7 +20,7 @@ from trim_process import EventData_Trim, get_trim_dataloader
 from myTransformer.Models import Transformer
 import pdb
 
-MODEL_PATH = "trainedModels\\transformer50softplus.pth.tar"
+MODEL_PATH = "trainedModels\\transformer50default.pth.tar"
 LONGEST_TEST_ACTION_SEQUENCE = 20
 ALPHA = .3
 LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]
@@ -324,7 +324,6 @@ def main():
     model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
     # when proactive flag is set, training and evaluation occurs as provided by the paper 'proactive'
     if(opt.proactive):
-        
         train(model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt)
         return
     # in here the logic of prediction future events and evaluating their accuracy in regards to metrics given by
