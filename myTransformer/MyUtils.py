@@ -94,35 +94,11 @@ def time_normalization():
                 max = val
             if(val < min):
                 min = val
-    print(min, max)
     # function that produces the normalization that is applied on the event_times in develop_dumps.py
     return lambda x: scale * (x - min)/(max - min)
 
-# turns a list of event_types and the corresponding arrival_times into a sequence of frames. Each entry represents a frame and the event_type displayed on that frame
-def to_frame_data(times, types, frame_rate):
-    assert(len(times) == len(types))
-    reverse_norm = reverse_time_normalization()
-    # scale times to seconds
-    orig = list(map(reverse_norm, times))
-    orig = list(map(lambda x: int(round(x)), orig))
-    print(orig)
-    print(types)
-    # list of frame representation of aciton sequences
-    frame_rep = []
-    for action_index in range(len(orig) - 1):
-        start = orig[action_index] + 1
-        end = orig[action_index + 1] + 1
-        if(orig[action_index] == 0):
-            start = orig[action_index]
-        if(end - start) != 0:
-            frame_rep += [types[action_index]] * (end - start) * frame_rate
-        else:
-            frame_rep += [1] * frame_rate
-    return frame_rep
-
 # right function
 def truth_to_frame_data(times, types):
-
     if 0 in types:
         index, types = _adjust_types(types)
         times = times[:index + 1]
@@ -133,7 +109,6 @@ def truth_to_frame_data(times, types):
     orig = list(map(reverse_norm, times))
     orig = list(map(lambda x: int(round(x)), orig))
     orig = orig[1:]
-    #print(orig)
     start = 0
     in_frames = [1]
 

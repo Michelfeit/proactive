@@ -98,7 +98,6 @@ class Encoder(nn.Module):
 
 class Predictor(nn.Module):
     """ Prediction of next event type. """
-
     # given flag, use positive activation function
     def __init__(self, dim, num_types, fn_name):
         super().__init__()
@@ -122,7 +121,6 @@ class Predictor(nn.Module):
         return out
 
 class LG(nn.Module):
-
     def __init__(self):
         super().__init__()
         self.lognorm = torch.distributions.log_normal.LogNormal(torch.tensor([0.0]), torch.tensor([1.0]))
@@ -138,7 +136,6 @@ class RNN_layers(nn.Module):
     Optional recurrent layers. This is inspired by the fact that adding
     recurrent layers on top of the Transformer helps language modeling.
     """
-
     def __init__(self, d_model, d_rnn):
         super().__init__()
 
@@ -155,14 +152,12 @@ class RNN_layers(nn.Module):
         out = self.projection(out)
         return out
 
-
 class Transformer(nn.Module):
     """ A sequence to sequence model with attention mechanism. """
-
     def __init__(
             self,
             num_types, num_goals, d_model=256, d_rnn=128, d_inner=1024,
-            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1):
+            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, activation="default", hawkes= False):
         super().__init__()
 
         self.encoder = Encoder(
@@ -176,7 +171,6 @@ class Transformer(nn.Module):
             d_v=d_v,
             dropout=dropout,
         )
-
         self.num_types = num_types
         self.num_goals = num_goals
 
@@ -196,7 +190,7 @@ class Transformer(nn.Module):
         self.rnn = RNN_layers(d_model, d_rnn)
 
         # prediction of next time stamp
-        self.time_predictor = Predictor(d_model, 1, "default")
+        self.time_predictor = Predictor(d_model, 1, activation)
 
         # Adding log-normal 
         self.time_log = LG()
@@ -217,15 +211,19 @@ class Transformer(nn.Module):
                 type_prediction: batch*seq_len*num_classes (not normalized);
                 time_prediction: batch*seq_len.
         """
+        hawkes = False
         non_pad_mask = get_non_pad_mask(event_type)
 
         enc_output = self.encoder(event_type, event_time, non_pad_mask)
-        # enc_output = self.rnn(enc_output, non_pad_mask)
+        if(hawkes):
+            enc_output = self.rnn(enc_output, non_pad_mask)
+        
 
         time_prediction = self.time_predictor(enc_output, non_pad_mask)
 
         # Uncomment to start log-normal distribution sampling
-        time_prediction = self.time_log(time_prediction, non_pad_mask)
+        if(not hawkes):
+            time_prediction = self.time_log(time_prediction, non_pad_mask)
 
         type_prediction = self.type_predictor(enc_output, non_pad_mask)
 

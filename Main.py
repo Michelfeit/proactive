@@ -10,7 +10,6 @@ import Utils
 from process import get_dataloader
 from transformer.Models import Transformer
 from tqdm import tqdm
-import pdb
 
 def prepare_dataloader(opt):
     def load_data(name, dict_name):
@@ -40,7 +39,6 @@ def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal,
     total_num_pred = 0
 
     ### tqdm is progress bar
-    ### batch is a tensor
     for batch in tqdm(training_data, mininterval=2, desc='  - (Training)   ', leave=False):
 
         ### put batch element-wise on gpu

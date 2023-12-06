@@ -65,6 +65,8 @@ def log_likelihood(model, data, time, types):
     event_ll = compute_event(type_lambda, non_pad_mask)
     event_ll = torch.sum(event_ll, dim=-1)
 
+    # non-event log-likelihood, either numerical integration or MC integration
+    # non_event_ll = compute_integral_biased(type_lambda, time, non_pad_mask)
     non_event_ll = compute_integral_unbiased(model, data, time, non_pad_mask, type_mask)
     non_event_ll = torch.sum(non_event_ll, dim=-1)
 
@@ -133,13 +135,20 @@ def pred_goal(prediction, types):
     total_seqs = torch.tensor([truth.shape[0]-1])
     return correct_num, total_seqs
 
-def time_loss(prediction, event_time):
+def time_loss_flows(prediction, event_time):
     prediction.squeeze_(-1)
     true = event_time[:, 1:] - event_time[:, :-1]
     prediction = prediction[:, :-1]
     diff =  true - prediction
     se = torch.sum(torch.abs(diff))
+    return se
 
+def time_loss_hawkes(prediction, event_time):
+    prediction.squeeze_(-1)
+    true = event_time[:, 1:] - event_time[:, :-1]
+    prediction = prediction[:, :-1]
+    diff =  true - prediction
+    se = torch.sum(diff * diff)
     return se
 
 class LabelSmoothingLoss(nn.Module):
