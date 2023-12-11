@@ -157,7 +157,7 @@ class Transformer(nn.Module):
     def __init__(
             self,
             num_types, num_goals, d_model=256, d_rnn=128, d_inner=1024,
-            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, activation="default", hawkes= False):
+            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, activation="default", rnn= False, hawkes= False):
         super().__init__()
 
         self.encoder = Encoder(
@@ -173,6 +173,9 @@ class Transformer(nn.Module):
         )
         self.num_types = num_types
         self.num_goals = num_goals
+
+        self.rnnOn = rnn
+        self.hawkes= hawkes
 
         # convert hidden vectors into a scalar
         self.linear = nn.Linear(d_model, num_types)
@@ -211,18 +214,17 @@ class Transformer(nn.Module):
                 type_prediction: batch*seq_len*num_classes (not normalized);
                 time_prediction: batch*seq_len.
         """
-        hawkes = False
         non_pad_mask = get_non_pad_mask(event_type)
 
         enc_output = self.encoder(event_type, event_time, non_pad_mask)
-        if(hawkes):
+
+        if(self.rnnOn):
             enc_output = self.rnn(enc_output, non_pad_mask)
-        
 
         time_prediction = self.time_predictor(enc_output, non_pad_mask)
 
         # Uncomment to start log-normal distribution sampling
-        if(not hawkes):
+        if(not self.hawkes):
             time_prediction = self.time_log(time_prediction, non_pad_mask)
 
         type_prediction = self.type_predictor(enc_output, non_pad_mask)
