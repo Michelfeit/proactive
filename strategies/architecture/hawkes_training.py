@@ -10,10 +10,10 @@ from tqdm import tqdm
 import myTransformer.Constants as Constants
 import myTransformer.Utils as Utils
 
-from strategies.architecture.training_strategy import Evaluation_Strategy
+from strategies.architecture.training_strategy import Training_Strategy
 
 ### https://github.com/SimiaoZuo/Transformer-Hawkes-Process/tree/master ###
-class HawkesTraining(Evaluation_Strategy):
+class HawkesTraining(Training_Strategy):
     def train(self, model: nn.Module, training_data, test_data, optimizer: optim.Adam, scheduler, pred_loss_func, pred_loss_goal, opt):
         """ Start training. """
         valid_event_losses = []  # validation log-likelihood

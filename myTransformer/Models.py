@@ -7,7 +7,6 @@ import torch.nn.functional as F
 
 import myTransformer.Constants as Constants
 from myTransformer.Layers import EncoderLayer
-#from DataPreparation import prepare_dataloader
 
 # returns all positions that are not padding. the non pad positions are marked with a float 1.
 # Finally, another dinmension is added at the end of the tensor SHAPE: (_,_) -> (_,_,1)
@@ -232,3 +231,59 @@ class Transformer(nn.Module):
         goal_prediction = self.goal_predictor(enc_output, non_pad_mask)
 
         return enc_output, (type_prediction, time_prediction, goal_prediction)
+    
+class TransformerMixure(nn.Module):
+    """ A sequence to sequence model with attention mechanism. """
+    def __init__(
+            self,
+            num_types, num_goals, d_model=256, d_inner=1024,
+            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, num_mix_components= 16):
+        super().__init__()
+
+        self.encoder = Encoder(
+            num_types=num_types,
+            num_goals=num_goals,
+            d_model=d_model,
+            d_inner=d_inner,
+            n_layers=n_layers,
+            n_head=n_head,
+            d_k=d_k,
+            d_v=d_v,
+            dropout=dropout,
+        )
+        self.num_types = num_types
+        self.num_goals = num_goals
+
+        # convert hidden vectors into a scalar
+        self.linear = nn.Linear(d_model, num_types)
+
+        # convert hidden vectors into a scalar
+        self.linear_g = nn.Linear(d_model, num_goals)
+
+        # convert sequence_embedding into parameter_embedding for the mixure model
+        self.num_mix_components = num_mix_components
+        self.linear_lnm = nn.Linear(d_model, 3 * self.num_mix_components) # 3-times, for every parameter of the mixure model (omega -> mixure weight, my -> mixure mean, sigma -> standard deviation)
+
+        self.type_predictor = Predictor(d_model, num_types, "default")
+        # prediction of sequence goal
+        # self.goal_predictor = Predictor(d_model, num_goals, "default")
+
+    def forward(self, event_type:torch.Tensor, event_time):
+        """
+        Return the hidden representations and predictions.
+        For a sequence (l_1, l_2, ..., l_N), we predict (l_2, ..., l_N, l_{N+1}).
+        Input: event_type: batch*seq_len;
+               event_time: batch*seq_len.
+        Output: enc_output: batch*seq_len*model_dim;
+                type_prediction: batch*seq_len*num_classes (not normalized);
+                time_prediction: batch*seq_len.
+        """
+        non_pad_mask = get_non_pad_mask(event_type)
+
+        enc_output = self.encoder(event_type, event_time, non_pad_mask)
+
+        mixture_encoding = self.linear_lnm(enc_output)
+
+        type_prediction = self.type_predictor(enc_output, non_pad_mask)
+        #goal_prediction = self.goal_predictor(enc_output, non_pad_mask)
+        return enc_output, (type_prediction, mixture_encoding)

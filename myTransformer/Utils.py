@@ -44,6 +44,8 @@ def compute_integral_unbiased(model, data, time, non_pad_mask, type_mask):
     unbiased_integral = all_lambda * diff_time
     return unbiased_integral
 
+
+
 def log_likelihood(model, data, time, types):
     # tensor mask showing which element is padding.
     non_pad_mask = get_non_pad_mask(types).squeeze(2)

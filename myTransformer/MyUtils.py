@@ -5,6 +5,11 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 
+# https://github.com/shchur/ifl-tpp/blob/master/code/dpp/utils.py #
+def clamp_preserve_gradients(x: torch.Tensor, min: float, max: float) -> torch.Tensor:
+    """Clamp the tensor while preserving gradients in the clamped region."""
+    return x + (x.clamp(min, max) - x).detach()
+
 def get_next_type_prediction(prediction, data):
     pred_type = torch.max(prediction, dim=-1)[1]
     sampling = False

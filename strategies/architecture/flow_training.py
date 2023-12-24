@@ -1,4 +1,4 @@
-from strategies.architecture.training_strategy import Evaluation_Strategy
+from strategies.architecture.training_strategy import Training_Strategy
 
 import torch
 import torch.nn as nn
@@ -9,7 +9,7 @@ import myTransformer.Constants as Constants
 import myTransformer.Utils as Utils
 
 ### https://github.com/data-iitd/proactive/ ###
-class FlowTraining(Evaluation_Strategy):
+class FlowTraining(Training_Strategy):
     def train(self, model: nn.Module, training_data, test_data, optimizer: optim.Adam, scheduler, pred_loss_func, pred_loss_goal, opt):
         test_acc_list = []
         test_goal_list = []

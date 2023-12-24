@@ -1,6 +1,6 @@
 
 
-class Evaluation_Strategy:
+class Training_Strategy:
     def train(self, model, training_data, test_data, optimizer, scheduler, pred_loss_func, pred_loss_goal, opt):
         return super().train()
 
