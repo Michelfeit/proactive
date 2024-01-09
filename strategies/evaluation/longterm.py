@@ -24,7 +24,7 @@ class Longterm_Strategy(Evaluation_Strategy):
 
         # trim_event_data encapsules trimmed down versions of action sequences contained in the test.pkl
         # during this prediction, the eventdata ought to be concatenated with predictions by the model
-        trim_event_data = EventData_Trim(pred_data, eos_test_ti, ALPHA)
+        trim_event_data = EventData_Trim(pred_data, eos_test_ti, opt, ALPHA)
         
         pred_time = []
         pred_time_gap = []

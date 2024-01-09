@@ -8,14 +8,16 @@ from tqdm import tqdm
 from pathlib import Path
 from enum import Enum
 from strategies.architecture.flow_training import FlowTraining
+from strategies.architecture.gmm_training import GMM_Training
 from strategies.architecture.hawkes_training import HawkesTraining
 
 import myTransformer.Constants as Constants
 import myTransformer.Utils as Utils
 from data_preparation import initial_dataloader_preparation
-from myTransformer.Models import Transformer
+from myTransformer.Models import Transformer, TransformerMixure
 
 from strategies.evaluation.longterm import Longterm_Strategy
+from strategies.evaluation.longterm_gmm import Longterm_GMM_Strategy
 from strategies.evaluation.shortterm_flows import Shortterm_Flows_Strategy
 from strategies.evaluation.shortterm_hawkes import Shortterm_Hawkes_Strategy
 
@@ -41,7 +43,7 @@ BREAKFAST_FRAME_RATE = 15
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-data', required=True)
+    parser.add_argument('-data', default = "data/Breakfast/")
     parser.add_argument('-epoch', type=int, default=50)
     parser.add_argument('-batch_size', type=int, default=16)
     parser.add_argument('-d_model', type=int, default=64)
@@ -56,11 +58,12 @@ def main():
     parser.add_argument('-smooth', type=float, default=0.1)
     ### add argument for switching between evaluations
     parser.add_argument('-rnn_layer', type=boolean_string, default= 'False')
+    parser.add_argument('-mix', type=int, default= 16)
 
-    parser.add_argument('-timeframe', type=str, default= 'st')
+    parser.add_argument('-timeframe', type=str, default= 'lt')
     parser.add_argument('-activation', type=activation_string, default= 'default')
 
-    parser.add_argument('-architecture', type=architecture_string, default= 'flows')
+    parser.add_argument('-architecture', type=architecture_string, default= 'gmm')
 
     opt = parser.parse_args()
 
@@ -90,7 +93,12 @@ def main():
     evaluation_strategy = _set_eval_strategy(timeframe)
     train = _set_training_strategy(architecture)
 
-    model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
+    if(architecture == Architecture.GMM):
+        model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_gmmModel(opt)
+        if(timeframe == Timeframe.LONGTERM):
+            evaluation_strategy = _set_eval_strategy(Timeframe.LONGTERM_GMM)
+    else:
+        model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
 
     config = architecture.value + "_" + activation + "_" +  rnn_descriptor
     model_path = MODEL_PATH_PREFIX + "_" + config + MODEL_PATH_SUFFIX
@@ -149,10 +157,46 @@ def prepare_proactive(opt):
 
     return model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal
 
+def prepare_gmmModel(opt):
+    trainloader, testloader, num_types, num_goals = initial_dataloader_preparation(opt)
+
+    regularization = 1e-5  # L2 regularization parameter
+    learning_rate = 1e-3   # Learning rate for Adam optimizer   
+
+    model = TransformerMixure(
+        num_types=num_types,
+        num_goals=num_goals,
+        d_model=opt.d_model,
+        d_inner=opt.d_inner_hid,
+        n_layers=opt.n_layers,
+        n_head=opt.n_head,
+        d_k=opt.d_k,
+        d_v=opt.d_v,
+        dropout=opt.dropout,
+        num_mix_components= opt.mix
+    )
+    model.to(opt.device)
+    #optimizer from "intensity-free"
+    optimizer = torch.optim.Adam(model.parameters(), weight_decay=regularization, lr=learning_rate)
+    #part of proactive
+    scheduler = optim.lr_scheduler.StepLR(optimizer, 10, gamma=0.5)
+
+    if opt.smooth > 0:
+        pred_loss_func = Utils.LabelSmoothingLoss(opt.smooth, num_types, ignore_index=-1)
+        pred_loss_goal = Utils.LabelSmoothingLoss(opt.smooth, num_goals, ignore_index=-1)
+    else:
+        pred_loss_func = nn.CrossEntropyLoss(ignore_index=-1, reduction='none')
+        pred_loss_goal = nn.CrossEntropyLoss(ignore_index=-1, reduction='none')
+
+    return model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal
+
 def _set_eval_strategy(strat):
     if(strat == Timeframe.LONGTERM):
         lt = Longterm_Strategy()
         return lt.evaluate
+    elif(strat == Timeframe.LONGTERM_GMM):
+        lt_gmm = Longterm_GMM_Strategy()
+        return lt_gmm.evaluate
     elif(strat == Timeframe.SHORTTERM_FLOWS):
         st_f = Shortterm_Flows_Strategy()
         return st_f.evaluate
@@ -176,6 +220,7 @@ class Timeframe(Enum):
     SHORTTERM_FLOWS = "st_f"
     SHORTTERM_HAWKES = "st_h"
     LONGTERM = "lt"
+    LONGTERM_GMM = "lt_gmm"
 
 def activation_string(s):
     activations = ["relu", "softplus", "elu", "default"]
@@ -191,21 +236,27 @@ def _set_training_strategy(strat):
     elif(strat == Architecture.HAWKES):
         ht = HawkesTraining()
         return ht.train
+    elif(strat == Architecture.GMM):
+        gmmt = GMM_Training()
+        return gmmt.train
     else:
         print("No training specification found. Training with flows module.")
         ft = FlowTraining()
         return ft.train
     
 def architecture_string(s):
+    print(s)
     architecture_map = {
         "flows": Architecture.FLOWS,
         "hawkes": Architecture.HAWKES,
+        "gmm": Architecture.GMM
     }
     return architecture_map.get(s, Architecture.FLOWS)
 
 class Architecture(Enum):
     FLOWS = "flows"
     HAWKES = "hawkes"
+    GMM = "gmm"
 
 def boolean_string(s):
     if s not in {'False', 'True'}:

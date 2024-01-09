@@ -25,7 +25,7 @@ def _load_data(name, dict_name):
         return data, int(num_types), int(num_goals)
 
 def get_prediction_loader(opt, data):
-    pred_data = get_trim_dataloader(data, opt.batch_size, shuffle=False, alpha=0.3)
+    pred_data = get_trim_dataloader(data, opt.batch_size, shuffle=False)
     return pred_data
     
 def load_prediciton_data(opt):
@@ -41,3 +41,6 @@ def load_test_eos_data(opt):
             eos_times.append(time)
     return eos_times
 
+#returns the mean and the standard deviation of inter arrival times
+def get_data_stats(opt):
+    trainloader = get_dataloader(opt.train_data, opt.batch_size, shuffle=True)

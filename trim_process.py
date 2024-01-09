@@ -7,7 +7,7 @@ import myTransformer.MyUtils as MyUtils
 import copy
 
 class EventData_Trim(EventData):
-    def __init__(self, data, eos_data, alpha):
+    def __init__(self, data, eos_data, opt, alpha=0.3):
         super().__init__(data)
         normalize_time = MyUtils.time_normalization()
         self.alpha = alpha
@@ -17,6 +17,10 @@ class EventData_Trim(EventData):
         assert(len(self.complete_time) == len(eos_data))
         for seq_index in range(len(eos_data)):
             self.complete_time[seq_index].append(normalize_time(eos_data[seq_index]))
+        self.complete_time_gap = [np.ediff1d(seq) for seq in self.complete_time]
+        # log mean and log standard deviation of inter arrival times
+        self.log_mean_time_gap, self.log_std_time_gap = self._get_statistics(opt)
+        print(self.log_mean_time_gap, self.log_std_time_gap)
 
         # get a list if indeces that stand for the index to be trimmed for each sequence
         self.alpha_indeces = self.get_alpha_trimmed_indeces()
@@ -95,7 +99,15 @@ class EventData_Trim(EventData):
             event_goal.append(self.event_goal[i][:index])
             i += 1
         return time, time_gap, event_type, event_goal
+    
+    def _get_statistics(self, opt):
+        all_gap_times = torch.cat([torch.from_numpy(seq).to(opt.device) for seq in self.complete_time_gap]) 
+        all_gap_times = all_gap_times.float().clamp(min=1e-10)
 
+        mean_log_inter_time = all_gap_times.log().mean()
+        std_log_inter_time = all_gap_times.log().std()
+        return mean_log_inter_time, std_log_inter_time
+    
     def __len__(self):
         return self.length
 
@@ -133,7 +145,7 @@ def collate_trim_fn(insts):
     i = 1
     return time, time_gap, event_type, event_goal, trim_time, trim_gap, trim_event_type, trim_event_goal
 
-def get_trim_dataloader(ds, batch_size, shuffle=True, alpha= .3):
+def get_trim_dataloader(ds, batch_size, shuffle=True):
     #pass ds as argument in order to be able to concat data
     # ds = EventData_Trim(data, alpha)
     dl = torch.utils.data.DataLoader(

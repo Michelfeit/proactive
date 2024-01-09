@@ -4,6 +4,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from myTransformer.MyUtils import clamp_preserve_gradients
+from myTransformer.distributions import LogNormalMixtureDistribution
 
 import myTransformer.Constants as Constants
 from myTransformer.Layers import EncoderLayer
@@ -279,7 +281,6 @@ class TransformerMixure(nn.Module):
                 time_prediction: batch*seq_len.
         """
         non_pad_mask = get_non_pad_mask(event_type)
-
         enc_output = self.encoder(event_type, event_time, non_pad_mask)
 
         mixture_encoding = self.linear_lnm(enc_output)
