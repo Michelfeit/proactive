@@ -7,7 +7,7 @@ import myTransformer.Constants as Constants
 from trim_process import EventData_Trim
 
 ### https://github.com/shchur/ifl-tpp/blob/master/code/dpp/models/log_norm_mix.py ###
-def get_inter_time_dist(model, event_data:EventData_Trim, raw_params) -> torch.distributions.Distribution:
+def get_inter_time_dist(model, opt, event_data:EventData_Trim, raw_params) -> torch.distributions.Distribution:
     """
     Get the distribution over inter-event times given the context.
     Args:
@@ -17,20 +17,24 @@ def get_inter_time_dist(model, event_data:EventData_Trim, raw_params) -> torch.d
         dist: Distribution over inter-event times, has batch_shape (batch_size, seq_len)
     """
     # Slice the tensor to get the parameters of the mixture
-    #print(model.num_mix_components)
+    log_mean, log_std = event_data._get_statistics(opt)
+
     locs = raw_params[..., :model.num_mix_components]
+    print(locs)
     log_scales = raw_params[..., model.num_mix_components: (2 * model.num_mix_components)]
+    print(log_scales)
     log_weights = raw_params[..., (2 * model.num_mix_components):]
 
     log_scales = clamp_preserve_gradients(log_scales, -5.0, 3.0)
     log_weights = torch.log_softmax(log_weights, dim=-1)
+    print(log_weights)
     
     return LogNormalMixtureDistribution(
         locs=locs,
         log_scales=log_scales,
         log_weights=log_weights,
-        mean_log_inter_time=event_data.log_mean_time_gap,
-        std_log_inter_time=event_data.log_std_time_gap
+        mean_log_inter_time=log_mean,
+        std_log_inter_time=log_std
     )
 
 def log_probability(inter_time_dist:LogNormalMixtureDistribution, event_time_gap):

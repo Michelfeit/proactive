@@ -1,0 +1,2 @@
+{'activation': 'softplus', 'batch_size': 4, 'd_inner': 256, 'd_k': 4, 'd_model': 64, 'd_rnn': 128, 'd_v': 4, 'dropout': 0, 'epochs': 100, 'learning_rate': 0.01, 'n_layer': 4}
+4

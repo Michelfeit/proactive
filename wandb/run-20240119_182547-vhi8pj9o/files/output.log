@@ -1,0 +1,24 @@
+{'activation': 'relu', 'batch_size': 4, 'd_k': 512, 'd_model': 512, 'd_rnn': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 35, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 4, 'smooth': 0}
+Loading All Datasets...
+45 9
+[ Epoch 1 ]
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 65, in train
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 109, in train_epoch
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\tqdm\std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 291, in __iter__
+    return _MultiProcessingDataLoaderIter(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 737, in __init__
+    w.start()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 322, in _Popen
+    return Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\popen_spawn_win32.py", line 89, in __init__
+    reduction.dump(process_obj, to_child)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+BrokenPipeError: [Errno 32] Broken pipe

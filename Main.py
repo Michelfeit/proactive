@@ -141,7 +141,7 @@ def train(model, training_data, test_data, optimizer, scheduler, pred_loss_func,
 #python Main.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-data', required=True)
+    parser.add_argument('-data', type=str, default='data/Breakfast/')
     parser.add_argument('-epoch', type=int, default=50)
     parser.add_argument('-batch_size', type=int, default=16)
     parser.add_argument('-d_model', type=int, default=64)

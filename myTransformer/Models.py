@@ -67,9 +67,10 @@ class Encoder(nn.Module):
         Input: batch*seq_len.
         Output: batch*seq_len*d_model.
         """
+        self.position_vec = torch.tensor(
+            [math.pow(10000.0, 2.0 * (i // 2) / self.d_model) for i in range(self.d_model)],
+            device=torch.device('cuda'))
         result = time.unsqueeze(-1) / self.position_vec
-        # result['start':'stop':'step']
-        # torch.sin vektor-weise
         result[:, :, 0::2] = torch.sin(result[:, :, 0::2])
         result[:, :, 1::2] = torch.cos(result[:, :, 1::2])
         
@@ -144,6 +145,7 @@ class RNN_layers(nn.Module):
         self.projection = nn.Linear(d_rnn, d_model)
 
     def forward(self, data, non_pad_mask):
+        print("WE DO BE USING RNN")
         lengths = non_pad_mask.squeeze(2).long().sum(1).cpu()
         pack_enc_output = nn.utils.rnn.pack_padded_sequence(
             data, lengths, batch_first=True, enforce_sorted=False)
@@ -158,7 +160,7 @@ class Transformer(nn.Module):
     def __init__(
             self,
             num_types, num_goals, d_model=256, d_rnn=128, d_inner=1024,
-            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, activation="default", rnn= False, hawkes= False):
+            n_layers=4, n_head=4, d_k=64, d_v=64, dropout=0.1, activation="default", hawkes= False):
         super().__init__()
 
         self.encoder = Encoder(
@@ -172,10 +174,24 @@ class Transformer(nn.Module):
             d_v=d_v,
             dropout=dropout,
         )
+        print()
+        print("d_model:", d_model)
+        print("d_inner", d_inner)
+        print("d_k", d_k)
+        print("d_k", d_v)
+        print()
         self.num_types = num_types
         self.num_goals = num_goals
 
-        self.rnnOn = rnn
+        self.rnnOn = False
+        if(d_rnn > 0):
+            print("WITH RNN")
+            # OPTIONAL recurrent layer, this sometimes helps
+            self.rnn = RNN_layers(d_model, d_rnn)
+            self.rnnOn = True
+        else:
+            print("NO RNN")
+
         self.hawkes= hawkes
 
         # convert hidden vectors into a scalar
@@ -189,9 +205,6 @@ class Transformer(nn.Module):
 
         # parameter for the softplus function
         self.beta = nn.Parameter(torch.tensor(1.0))
-
-        # OPTIONAL recurrent layer, this sometimes helps
-        self.rnn = RNN_layers(d_model, d_rnn)
 
         # prediction of next time stamp
         self.time_predictor = Predictor(d_model, 1, activation)

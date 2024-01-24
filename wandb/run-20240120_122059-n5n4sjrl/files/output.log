@@ -1,0 +1,149 @@
+Training hawkes transformer...
+{'batch_size': 4, 'd_k': 64, 'd_model': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 4, 'num_mix_components': 8, 'smooth': 0}
+Loading All Datasets...
+45 9
+tensor(-2.0079, device='cuda:0') tensor(1.7772, device='cuda:0')
+[ Epoch 0 ]
+
+
+  - (Training)   :  64%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                     | 77/121 [00:05<00:02, 18.05it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+Test loss: -1.9066189527511597 with time_loss: -3.454533100128174 and type_loss 1.5479141473770142
+New best found!
+
+
+
+  - (Training)   :  62%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                         | 75/121 [00:05<00:02, 18.14it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+Test loss: -1.2231677770614624 with time_loss: -2.5983259677886963 and type_loss 1.3751581907272339
+
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+Train loss: -2.080486297607422 with time_loss: -3.4744369983673096 and type_loss 1.3939505815505981
+Test loss: -1.962925910949707 with time_loss: -3.265392780303955 and type_loss 1.302466869354248
+New best found!
+
+
+
+  - (Training)   :  63%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                       | 76/121 [00:05<00:02, 18.45it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.03s/it]
+Test loss: -2.0557446479797363 with time_loss: -3.329205274581909 and type_loss 1.2734606266021729
+New best found!
+
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+Train loss: -2.4281930923461914 with time_loss: -3.7296571731567383 and type_loss 1.3014642000198364
+Test loss: -1.712430715560913 with time_loss: -2.934328317642212 and type_loss 1.2218976020812988
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+Test loss: -1.6084611415863037 with time_loss: -2.7755203247070312 and type_loss 1.1670591831207275
+
+
+  - (Training)   :  61%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                          | 74/121 [00:05<00:02, 17.62it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+Test loss: -2.0776445865631104 with time_loss: -3.301298141479492 and type_loss 1.2236535549163818
+New best found!
+
+
+  - (Training)   :  62%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                         | 75/121 [00:05<00:02, 18.03it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+Test loss: -2.229887008666992 with time_loss: -3.4093525409698486 and type_loss 1.179465413093567
+New best found!
+
+
+  - (Training)   :  61%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                          | 74/121 [00:05<00:02, 17.46it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+Test loss: -2.481907367706299 with time_loss: -3.723586082458496 and type_loss 1.2416788339614868
+New best found!
+
+
+  - (Training)   :  62%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                         | 75/121 [00:05<00:02, 18.05it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.99s/it]
+Test loss: -0.7728868722915649 with time_loss: -1.984936237335205 and type_loss 1.2120493650436401
+
+
+
+  - (Training)   :  62%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                         | 75/121 [00:05<00:02, 18.20it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.99s/it]
+Test loss: -2.415853977203369 with time_loss: -3.5343518257141113 and type_loss 1.1184979677200317
+
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+Test loss: -2.8809309005737305 with time_loss: -3.9825873374938965 and type_loss 1.1016563177108765
+New best found!
+
+
+
+  - (Training)   :  64%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                     | 77/121 [00:05<00:02, 18.35it/s]
+
+
+  - (Training)   :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.98s/it]
+Test loss: -2.6189565658569336 with time_loss: -3.717677593231201 and type_loss 1.0987210273742676
+
+
+
+  - (Training)   :  63%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                       | 76/121 [00:05<00:02, 18.09it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+Test loss: -0.7679322957992554 with time_loss: -1.8717153072357178 and type_loss 1.1037830114364624
+
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+Train loss: -3.2168688774108887 with time_loss: -4.286672592163086 and type_loss 1.0698038339614868
+Test loss: -0.7476322650909424 with time_loss: -1.8297216892242432 and type_loss 1.0820894241333008
+
+
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\gmm_training_wandb.py", line 73, in train
+    time_loss, type_loss = eval_epoch(model, testloader, pred_loss_func, pred_loss_goal, config, event_data)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\gmm_training_wandb.py", line 133, in eval_epoch
+    for  batch in tqdm(test_data, mininterval=2, desc='  - (Training)   ', leave=False):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\tqdm\std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 291, in __iter__
+    return _MultiProcessingDataLoaderIter(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 737, in __init__
+    w.start()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 322, in _Popen
+    return Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\popen_spawn_win32.py", line 89, in __init__
+    reduction.dump(process_obj, to_child)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)

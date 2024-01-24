@@ -125,7 +125,6 @@ class Longterm_Strategy(Evaluation_Strategy):
             for index in range(num_types):
                 if(num_total[index] != 0):
                     MOC_list[index] = (num_correct[index]/num_total[index]) * 100
-            print(LIST_OF_BETA_VALUES[beta], MOC_list)
             count = 0
             percents = 0
             for entry in MOC_list:

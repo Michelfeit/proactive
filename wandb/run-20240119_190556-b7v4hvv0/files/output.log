@@ -1,0 +1,16 @@
+Training hawkes transformer...
+{'activation': 'softplus', 'batch_size': [4], 'd_k': 128, 'd_model': 256, 'd_rnn': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': [0.1], 'epochs': 35, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': [4], 'smooth': [0]}
+Loading All Datasets...
+45 9
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\hawkes_training_wandb.py", line 22, in train
+    trainloader, testloader, num_types, num_goals = initial_dataloader_preparation(config)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\data_preparation.py", line 12, in initial_dataloader_preparation
+    trainloader = get_dataloader(train_data, opt.batch_size, shuffle=True)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\process.py", line 53, in get_dataloader
+    shuffle=shuffle
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 230, in __init__
+    batch_sampler = BatchSampler(sampler, batch_size, drop_last)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\sampler.py", line 198, in __init__
+    "but got batch_size={}".format(batch_size))
+ValueError: batch_size should be a positive integer value, but got batch_size=[4]

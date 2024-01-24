@@ -138,7 +138,7 @@ def pred_goal(prediction, types):
     return correct_num, total_seqs
 
 def time_loss_flows(prediction, event_time):
-    prediction.squeeze_(-1)
+    prediction.squeeze_(-1) # should be of shape (batch, sequenze, 1) but is of shape (batch, sequence, 512)
     true = event_time[:, 1:] - event_time[:, :-1]
     prediction = prediction[:, :-1]
     diff =  true - prediction

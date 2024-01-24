@@ -1,0 +1,47 @@
+{'activation': 'softplus', 'batch_size': 4, 'd_k': 64, 'd_model': 128, 'd_rnn': 64, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 4, 'smooth': 0}
+Loading All Datasets...
+45 9
+[ Epoch 1 ]
+
+
+  - (Training)   :  63%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                             | 76/121 [00:05<00:02, 17.83it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood: -0.24036, accuracy:  0.16345, RMSE:  1.13642, elapse: 0.061 min
+  - [Info] Maximum ll: -0.24036, Maximum accuracy:  0.16345, Minimum RMSE:  1.13642
+improvement in epoch 1
+
+
+
+  - (Training)   :  63%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                             | 76/121 [00:05<00:02, 18.24it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.06552, accuracy:  0.32561, RMSE:  1.08633, elapse: 0.062 min
+  - [Info] Maximum ll:  0.06552, Maximum accuracy:  0.32561, Minimum RMSE:  1.08633
+improvement in epoch 2
+
+
+
+  - (Training)   :  63%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                             | 76/121 [00:05<00:02, 18.26it/s]
+
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 73, in train
+    valid_event, valid_type, valid_time, test_loss = eval_epoch(model, testloader, pred_loss_func, pred_loss_goal, config)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 165, in eval_epoch
+    desc='  - (Validation) ', leave=False):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\tqdm\std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 291, in __iter__
+    return _MultiProcessingDataLoaderIter(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 737, in __init__
+    w.start()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 322, in _Popen
+    return Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\popen_spawn_win32.py", line 89, in __init__
+    reduction.dump(process_obj, to_child)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)

@@ -1,0 +1,1 @@
+{"batch_loss": -3.6052346229553223, "epoch": 35, "_timestamp": 1705681092.9183638, "_runtime": 338.8400309085846, "_step": 4339, "accuracy_train": 0.6950404502286317, "loglikelihood_train": 0.9575829722338838, "accuracy_test": 0.6756756756756757, "loglikelihood_test": 0.9192869420600148, "test_loss": -0.00297826683494897, "_wandb": {"runtime": 338}}

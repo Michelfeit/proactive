@@ -1,0 +1,8 @@
+Training hawkes transformer...
+{'batch_size': 4, 'd_k': 128, 'd_model': 256, 'd_rnn': 0, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 35, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 4, 'num_mix_components': 32, 'smooth': 0}
+Loading All Datasets...
+45 9
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\gmm_training_wandb.py", line 64, in train
+    event_data = get_event_data(config)
+TypeError: get_event_data() missing 1 required positional argument: 'opt'

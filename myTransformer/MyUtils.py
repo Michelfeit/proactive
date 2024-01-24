@@ -23,10 +23,13 @@ def get_next_type_prediction(prediction, data):
     for sequence in data:
         i = 0
         for action in sequence:
-            if(action == 0):
+            if(action == 0 or i == len(sequence) - 1):
                 break
             i += 1
+        if(i-1 > len(pred_type[j])):
+            print(1)
         preds.append(pred_type[j][i-1])
+        
         j+=1
     next_action = torch.tensor(preds) + 1
     return next_action, pred_type
@@ -36,7 +39,7 @@ def get_next_time_prediction(prediction, data):
     preds = []
     j = 0
     for sequence in data:
-        i = 0
+        i = -1
         for action in sequence[1:]:
             if(action == 0):
                 break

@@ -23,54 +23,49 @@ from strategies.evaluation.shortterm_hawkes import Shortterm_Hawkes_Strategy
 
 MODEL_PATH_PREFIX = "trainedModels\\tf"
 MODEL_PATH_SUFFIX = ".pth.tar"
-LONGEST_TEST_ACTION_SEQUENCE = 20
-ALPHA = .3
-LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]
-BREAKFAST_FRAME_RATE = 15
 
 # proactive (https://github.com/data-iitd/proactive/): 
 # python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 50 -rnn_layer False -timeframe st -activation default -architecture flows
 
 # transformer hawkes (https://github.com/SimiaoZuo/Transformer-Hawkes-Process/tree/master):
 # python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 50 -rnn_layer True -timeframe st -activation softplus -architecture hawkes
-# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 512 -d_rnn 64 -d_inner 1024 -d_k 512 -d_v 512 -dropout 0.1 -lr 1e-4 -smooth 0.1 -epoch 100 -rnn_layer True -timeframe st -activation softplus -architecture hawkes
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 512 -d_rnn 0 -d_inner 2048 -d_k 512 -d_v 512 -dropout 0.1 -lr 1e-4 -smooth 0 -epoch 70 -rnn_layer False -timeframe st -activation softplus -architecture hawkes
 
 # longterm evaluation on proactive
-# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 50 -rnn_layer False -timeframe lt -activation softplus -architecture flows
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 256 -d_inner 1024 -d_k 512 -d_v 512 -epoch 70 -rnn_layer False -timeframe lt -activation softplus -architecture flows
 
 # longterm evaluation on transformer hawkes
 # python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 50 -rnn_layer True -timeframe lt -activation softplus -architecture hawkes
+
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 128 -d_inner 512 -epoch 60 -d_k 32 -d_v 32 -timeframe lt -architecture gmm
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-data', default = "data/Breakfast/")
     parser.add_argument('-epoch', type=int, default=50)
-    parser.add_argument('-batch_size', type=int, default=16)
-    parser.add_argument('-d_model', type=int, default=64)
-    parser.add_argument('-d_rnn', type=int, default=32)
-    parser.add_argument('-d_inner_hid', type=int, default=128)
-    parser.add_argument('-d_k', type=int, default=64)
-    parser.add_argument('-d_v', type=int, default=64)
+    parser.add_argument('-batch_size', type=int, default=4)
+    parser.add_argument('-d_model', type=int, default=128)
+    parser.add_argument('-d_rnn', type=int, default=0)
+    parser.add_argument('-d_inner_hid', type=int, default=512)
+    parser.add_argument('-d_k', type=int, default=32)
+    parser.add_argument('-d_v', type=int, default=32)
     parser.add_argument('-n_head', type=int, default=4)
     parser.add_argument('-n_layers', type=int, default=4)
     parser.add_argument('-dropout', type=float, default=0.1)
     parser.add_argument('-lr', type=float, default=1e-4)
-    parser.add_argument('-smooth', type=float, default=0.1)
+    parser.add_argument('-smooth', type=float, default=0)
+
     ### add argument for switching between evaluations
     parser.add_argument('-rnn_layer', type=boolean_string, default= 'False')
     parser.add_argument('-mix', type=int, default= 16)
-
     parser.add_argument('-timeframe', type=str, default= 'lt')
-    parser.add_argument('-activation', type=activation_string, default= 'default')
-
+    parser.add_argument('-activation', type=activation_string, default= 'softplus')
     parser.add_argument('-architecture', type=architecture_string, default= 'gmm')
 
     opt = parser.parse_args()
-
     opt.device = torch.device('cuda')
-
     set_seed(42)
-    
+
     architecture = opt.architecture
     print(architecture)
     activation = opt.activation
@@ -87,9 +82,7 @@ def main():
             timeframe += "_h"
         else:
             timeframe += "_f"
-    print(timeframe)
     timeframe = timeframe_string(timeframe)
-    print(timeframe)
     evaluation_strategy = _set_eval_strategy(timeframe)
     train = _set_training_strategy(architecture)
 
@@ -97,10 +90,10 @@ def main():
         model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_gmmModel(opt)
         if(timeframe == Timeframe.LONGTERM):
             evaluation_strategy = _set_eval_strategy(Timeframe.LONGTERM_GMM)
+            config = architecture.value + "_" + str(opt.mix)
     else:
         model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
-
-    config = architecture.value + "_" + activation + "_" +  rnn_descriptor
+        config = architecture.value + "_" + activation + "_" +  rnn_descriptor
     model_path = MODEL_PATH_PREFIX + "_" + config + MODEL_PATH_SUFFIX
 
     # check for an existing trained model
@@ -264,15 +257,15 @@ def boolean_string(s):
     return s == 'True'
 
 def set_seed(SEED):
-        torch.manual_seed(SEED)
-        torch.cuda.manual_seed(SEED)
-        torch.manual_seed(SEED)
-        np.random.seed(SEED)
-        torch.cuda.manual_seed_all(SEED)
-        random.seed(SEED)
-        torch.backends.cudnn.deterministic = True
-        torch.backends.cudnn.benchmark = True
-        print(f'Set SEED to {SEED}')
+    torch.manual_seed(SEED)
+    torch.cuda.manual_seed(SEED)
+    torch.manual_seed(SEED)
+    np.random.seed(SEED)
+    torch.cuda.manual_seed_all(SEED)
+    random.seed(SEED)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = True
+    print(f'Set SEED to {SEED}')
 
 if __name__ == '__main__':
     main()

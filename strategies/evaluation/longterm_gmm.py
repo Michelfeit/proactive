@@ -25,6 +25,9 @@ class Longterm_GMM_Strategy(Evaluation_Strategy):
         # during this prediction, the eventdata ought to be concatenated with predictions by the model
         trim_event_data = EventData_Trim(pred_data, eos_test_ti, opt, ALPHA)
         
+        log_mean = trim_event_data.log_mean_time_gap
+        log_std = trim_event_data.log_std_time_gap
+
         pred_time = []
         pred_time_gap = []
         pred_event_type = []
@@ -49,7 +52,7 @@ class Longterm_GMM_Strategy(Evaluation_Strategy):
                 j = 0
                 
                 for batch in predictionloader:
-                    event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x: x.to(opt.device), batch)
+                    event_time, time_gap, event_type, event_goal, trim_time, _ , trim_type, trim_goal = map(lambda x : x.to(opt.device), batch)
                     # find out if a sequence ended
                     sequence_ended = [False] * len(trim_type)
                     for seq in range(len(trim_type)):
@@ -59,12 +62,11 @@ class Longterm_GMM_Strategy(Evaluation_Strategy):
                             # once a sequence is found that has not yet ended, flag is set and predicition keeps on looping
                             predicting = True
 
-                    enc_out, (prediction, mixture_enc) = model(event_type, event_time)
-                    # get next event predicitons  
+                    enc_out, (prediction, mixture_enc) = model(trim_type, trim_time)
+                    # get next event predicitons 
                     pred_types, all_types  = MyUtils.get_next_type_prediction(prediction, trim_type)
                     # event times
-                    pred_times = Mix_Utils.get_inter_time_dist(model, trim_event_data, mixture_enc).sample()
-                    print(pred_times.shape)
+                    pred_times = Mix_Utils.get_inter_time_dist(model, opt, trim_event_data, mixture_enc[:,-1:,:]).sample()
                     # goals
                     pred_goals = torch.zeros_like(pred_times)
                     # whenever a sequence in that batch ended, swap prediction with a zero
@@ -123,14 +125,14 @@ class Longterm_GMM_Strategy(Evaluation_Strategy):
             for index in range(num_types):
                 if(num_total[index] != 0):
                     MOC_list[index] = (num_correct[index]/num_total[index]) * 100
-            print(LIST_OF_BETA_VALUES[beta], MOC_list)
+            #print(LIST_OF_BETA_VALUES[beta], MOC_list)
             count = 0
             percents = 0
             for entry in MOC_list:
                 if(entry != -1):
                     count += 1
                     percents += entry
-            print(f"Mean over all classes{LIST_OF_BETA_VALUES[beta]}:", percents/count)
+            print(f"Mean over all classes with beta value {LIST_OF_BETA_VALUES[beta]}:", percents/count)
             if(num_skips != 0):
                 print("Skipped:" , num_skips)
         

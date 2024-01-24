@@ -1,0 +1,17 @@
+{'activation': 'default', 'batch_size': 4, 'd_inner': 256, 'd_k': 4, 'd_model': 64, 'd_rnn': 0, 'd_v': 4, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 100, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 4, 'smooth': 0.1}
+Loading All Datasets...
+45 9
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 40, in train
+    hawkes=True
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\myTransformer\Models.py", line 195, in __init__
+    self.rnn = RNN_layers(d_model, d_rnn)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\myTransformer\Models.py", line 141, in __init__
+    self.rnn = nn.LSTM(d_model, d_rnn, num_layers=1, batch_first=True)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\nn\modules\rnn.py", line 522, in __init__
+    super(LSTM, self).__init__('LSTM', *args, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\nn\modules\rnn.py", line 100, in __init__
+    self.reset_parameters()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\nn\modules\rnn.py", line 166, in reset_parameters
+    stdv = 1.0 / math.sqrt(self.hidden_size)
+ZeroDivisionError: float division by zero
