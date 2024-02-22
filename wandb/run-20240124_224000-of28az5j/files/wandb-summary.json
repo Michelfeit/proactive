@@ -1,0 +1,1 @@
+{"time_loss_train": -5.035576343536377, "type_loss_train": 0.9106486439704895, "train_loss": -4.124927520751953, "_timestamp": 1706132939.1485667, "_runtime": 538.5253577232361, "_step": 149, "time_loss_test": -2.0845861434936523, "type_loss_test": 1.043812870979309, "test_loss": -1.0407732725143433, "_wandb": {"runtime": 538}}

@@ -24,9 +24,9 @@ def train(config=None):
         model = Transformer(
             num_types=num_types,
             num_goals=num_goals,
-            d_model=config.d_model,
+            d_model=config.n_head * config.d_k,
             d_rnn=config.d_rnn,
-            d_inner=config.d_model * 4,
+            d_inner=config.n_head * config.d_k * 4,
             n_layers=config.n_layers,
             n_head=config.n_head,
             d_k=config.d_k,
@@ -128,7 +128,7 @@ def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal,
         goal_loss, pred_num_goal = Utils.goal_loss(prediction[2], event_goal, pred_loss_goal)
 
         # SE is usually large, scale it to stabilize training
-        scale_time_loss = 100
+        scale_time_loss = 1
         loss = event_loss + pred_loss + se / scale_time_loss
         wandb.log({"sequence_loss": loss, "epoch": epoch})
         loss.backward()

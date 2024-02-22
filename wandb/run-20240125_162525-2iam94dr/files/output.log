@@ -1,0 +1,204 @@
+
+  - (Training)   :   1%|█▋                                                                                                                                                                                                                | 1/121 [00:02<05:51,  2.93s/it]
+Training flows transformer...
+{'activation': 'softplus', 'batch_size': 4, 'd_k': 32, 'd_rnn': 0, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 2, 'n_layers': 5, 'smooth': 0}
+Loading All Datasets...
+45 9
+d_model: 64
+d_inner 256
+d_k 32
+d_k 32
+NO RNN
+
+  - (Training)   :  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                   | 73/121 [00:04<00:02, 17.92it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.16345, MAE:  0.48897, GPA:  0.00000
+Best ACC:  0.16345, MAE:  0.48897, GPA:  0.00000
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Training) Acc:  0.19346, MAE:  0.43479, Itv. GPA:  0.10130
+(Testing) Acc:  0.24710, MAE:  0.47377, GPA:  0.01053
+Best ACC:  0.24710, MAE:  0.47377, GPA:  0.01053
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Training) Acc:  0.31410, MAE:  0.41601, Itv. GPA:  0.22195
+(Testing) Acc:  0.44916, MAE:  0.45144, GPA:  0.08421
+Best ACC:  0.44916, MAE:  0.45144, GPA:  0.08421
+
+
+
+  - (Training)   :  61%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                 | 74/121 [00:04<00:02, 18.14it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.53282, MAE:  0.44046, GPA:  0.14737
+Best ACC:  0.53282, MAE:  0.44046, GPA:  0.14737
+
+
+
+  - (Training)   :  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                   | 73/121 [00:04<00:02, 17.82it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.56885, MAE:  0.42661, GPA:  0.15789
+Best ACC:  0.56885, MAE:  0.42661, GPA:  0.15789
+
+
+
+  - (Training)   :  61%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                 | 74/121 [00:04<00:02, 18.15it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:02<01:29,  2.90s/it]
+(Testing) Acc:  0.58044, MAE:  0.41783, GPA:  0.23158
+Best ACC:  0.58044, MAE:  0.41783, GPA:  0.23158
+
+
+
+  - (Training)   :  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                   | 73/121 [00:04<00:02, 17.80it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:02<01:29,  2.89s/it]
+(Testing) Acc:  0.59846, MAE:  0.41200, GPA:  0.26316
+Best ACC:  0.59846, MAE:  0.41200, GPA:  0.26316
+
+
+
+  - (Training)   :  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                   | 73/121 [00:04<00:02, 17.97it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.59974, MAE:  0.40659, GPA:  0.27368
+Best ACC:  0.59974, MAE:  0.40659, GPA:  0.27368
+
+
+
+  - (Training)   :  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                   | 73/121 [00:05<00:02, 17.67it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.60232, MAE:  0.40277, GPA:  0.27368
+Best ACC:  0.60232, MAE:  0.40277, GPA:  0.27368
+
+
+
+  - (Training)   :  60%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                                    | 72/121 [00:05<00:02, 17.04it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.61519, MAE:  0.40274, GPA:  0.28421
+Best ACC:  0.61519, MAE:  0.40274, GPA:  0.28421
+
+
+
+  - (Training)   :  59%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                      | 71/121 [00:04<00:02, 17.33it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.61519, MAE:  0.40117, GPA:  0.28421
+Best ACC:  0.61519, MAE:  0.40117, GPA:  0.28421
+
+
+
+  - (Training)   :  59%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                      | 71/121 [00:05<00:02, 16.93it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:03<01:36,  3.12s/it]
+(Testing) Acc:  0.62420, MAE:  0.39911, GPA:  0.29474
+Best ACC:  0.62420, MAE:  0.39911, GPA:  0.29474
+
+
+
+  - (Training)   :  57%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                                         | 69/121 [00:05<00:03, 16.71it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62420, MAE:  0.40027, GPA:  0.30526
+Best ACC:  0.62420, MAE:  0.39911, GPA:  0.30526
+
+
+
+  - (Training)   :  56%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                           | 68/121 [00:05<00:03, 16.32it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62162, MAE:  0.39653, GPA:  0.28421
+Best ACC:  0.62420, MAE:  0.39653, GPA:  0.30526
+
+
+
+  - (Training)   :  60%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                                    | 72/121 [00:05<00:02, 17.29it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62291, MAE:  0.40041, GPA:  0.30526
+Best ACC:  0.62420, MAE:  0.39653, GPA:  0.30526
+
+
+
+
+  - (Training)   :  57%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                                         | 69/121 [00:04<00:03, 16.81it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+(Testing) Acc:  0.62548, MAE:  0.39804, GPA:  0.28421
+Best ACC:  0.62548, MAE:  0.39653, GPA:  0.30526
+
+
+
+  - (Training)   :  60%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                                    | 72/121 [00:04<00:02, 17.49it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:03<01:37,  3.16s/it]
+(Testing) Acc:  0.62806, MAE:  0.39847, GPA:  0.30526
+Best ACC:  0.62806, MAE:  0.39653, GPA:  0.30526
+
+
+
+  - (Training)   :  59%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                      | 71/121 [00:05<00:02, 16.88it/s]
+
+
+  - (Validation) :   3%|██████▌                                                                                                                                                                                                            | 1/32 [00:03<01:39,  3.21s/it]
+(Testing) Acc:  0.61776, MAE:  0.39586, GPA:  0.29474
+Best ACC:  0.62806, MAE:  0.39586, GPA:  0.30526
+
+
+  - (Training)   :   1%|█▋                                                                                                                                                                                                                | 1/121 [00:03<06:12,  3.11s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62934, MAE:  0.39809, GPA:  0.30526
+Best ACC:  0.62934, MAE:  0.39586, GPA:  0.30526
+
+
+  - (Training)   :   1%|█▋                                                                                                                                                                                                                | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62162, MAE:  0.39551, GPA:  0.29474
+Best ACC:  0.62934, MAE:  0.39551, GPA:  0.30526
+
+
+
+  - (Training)   :  58%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                                                        | 70/121 [00:05<00:03, 16.25it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                                           | 0/32 [00:00<?, ?it/s]
+(Testing) Acc:  0.62420, MAE:  0.39510, GPA:  0.29474
+Best ACC:  0.62934, MAE:  0.39510, GPA:  0.30526
+
+Traceback (most recent call last):
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\flows_training_wandb.py", line 60, in train
+    train_event, train_type, train_goal, train_time = train_epoch(model, trainloader, optimizer, pred_loss_func, pred_loss_goal, config, epoch)
+  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\wandb\flows_training_wandb.py", line 95, in train_epoch
+    for batch in tqdm(training_data, mininterval=2, desc='  - (Training)   ', leave=False):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\tqdm\std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 291, in __iter__
+    return _MultiProcessingDataLoaderIter(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\torch\utils\data\dataloader.py", line 737, in __init__
+    w.start()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\context.py", line 322, in _Popen
+    return Popen(process_obj)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\popen_spawn_win32.py", line 89, in __init__
+    reduction.dump(process_obj, to_child)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\multiprocessing\reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+Exception

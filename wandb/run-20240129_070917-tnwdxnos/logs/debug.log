@@ -1,0 +1,94 @@
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Current SDK version is 0.16.2
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Configure stats pid to 15028
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Loading settings from C:\Users\mich0003\.config\wandb\settings
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Loading settings from C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\settings
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'flows_test_noHawk', 'entity': 'teammfeit', 'root_dir': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive', 'run_id': 'tnwdxnos', 'sweep_param_path': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive\\wandb\\sweep-6slykx1g\\config-tnwdxnos.yaml', 'sweep_id': '6slykx1g'}
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-01-29 07:09:17,547 INFO    Thread-664:15028 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'MainWAndB.py', 'program_abspath': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive\\MainWAndB.py', 'program': 'MainWAndB.py'}
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:_log_setup():526] Logging user logs to C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240129_070917-tnwdxnos\logs\debug.log
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:_log_setup():527] Logging internal logs to C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240129_070917-tnwdxnos\logs\debug-internal.log
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:init():566] calling init triggers
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:init():574] wandb.init called with sweep_config: {'activation': 'softplus', 'batch_size': 4, 'd_k': 256, 'd_rnn': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 8, 'n_layers': 4, 'smooth': 0}
+config: {}
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:init():616] starting backend
+2024-01-29 07:09:17,548 INFO    Thread-664:15028 [wandb_init.py:init():620] setting up manager
+2024-01-29 07:09:17,555 INFO    Thread-664:15028 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=spawn, using: spawn
+2024-01-29 07:09:17,556 INFO    Thread-664:15028 [wandb_init.py:init():628] backend started and connected
+2024-01-29 07:09:17,571 INFO    Thread-664:15028 [wandb_run.py:_config_callback():1342] config_cb None None {'activation': 'softplus', 'batch_size': 4, 'd_k': 256, 'd_rnn': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 8, 'n_layers': 4, 'smooth': 0}
+2024-01-29 07:09:17,572 INFO    Thread-664:15028 [wandb_init.py:init():720] updated telemetry
+2024-01-29 07:09:17,611 INFO    Thread-664:15028 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-01-29 07:09:18,022 INFO    Thread-664:15028 [wandb_run.py:_on_init():2254] communicating current version
+2024-01-29 07:09:18,088 INFO    Thread-664:15028 [wandb_run.py:_on_init():2263] got version response 
+2024-01-29 07:09:18,088 INFO    Thread-664:15028 [wandb_init.py:init():804] starting run threads in backend
+2024-01-29 07:09:20,325 INFO    Thread-664:15028 [wandb_run.py:_console_start():2233] atexit reg
+2024-01-29 07:09:20,325 INFO    Thread-664:15028 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2024-01-29 07:09:20,325 INFO    Thread-664:15028 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2024-01-29 07:09:20,325 INFO    Thread-664:15028 [wandb_run.py:_redirect():2178] Redirects installed.
+2024-01-29 07:09:20,326 INFO    Thread-664:15028 [wandb_init.py:init():847] run started, returning control to user process
+2024-01-29 07:17:16,584 INFO    Thread-10 :15028 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connection.py", line 207, in _new_conn
+    socket_options=self.socket_options,
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connectionpool.py", line 803, in urlopen
+    **response_kw,
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000107F66FC3C8>: Failed to resolve 'api.wandb.ai' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\requests\adapters.py", line 497, in send
+    chunked=chunked,
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\connectionpool.py", line 846, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000107F66FC3C8>: Failed to resolve 'api.wandb.ai' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\wandb\sdk\internal\internal_api.py", line 369, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\mich0003\AppData\Local\anaconda3\envs\proactive\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000107F66FC3C8>: Failed to resolve 'api.wandb.ai' ([Errno 11001] getaddrinfo failed)"))
+2024-01-29 07:22:12,174 INFO    Thread-664:15028 [wandb_run.py:_finish():1962] finishing run teammfeit/flows_test_noHawk/tnwdxnos
+2024-01-29 07:22:12,174 INFO    Thread-664:15028 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 0
+2024-01-29 07:22:12,174 INFO    Thread-664:15028 [wandb_run.py:_restore():2185] restore
+2024-01-29 07:22:12,174 INFO    Thread-664:15028 [wandb_run.py:_restore():2191] restore done
+2024-01-29 07:22:19,040 INFO    Thread-664:15028 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-01-29 07:22:19,041 INFO    Thread-664:15028 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-01-29 07:22:19,049 INFO    Thread-664:15028 [wandb_run.py:_footer_sync_info():3816] logging synced files

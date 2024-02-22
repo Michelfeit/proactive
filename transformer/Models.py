@@ -214,7 +214,6 @@ class Transformer(nn.Module):
 
         # Uncomment to start log-normal distribution sampling
         time_prediction = self.time_log(time_prediction, non_pad_mask)
-        print(time_prediction[1])
 
         type_prediction = self.type_predictor(enc_output, non_pad_mask)
 

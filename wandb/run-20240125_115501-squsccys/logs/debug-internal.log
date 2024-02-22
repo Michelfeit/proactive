@@ -1,0 +1,1321 @@
+2024-01-25 11:55:01,170 INFO    StreamThr :8588 [internal.py:wandb_internal():89] W&B internal server running at pid: 8588, started at: 2024-01-25 11:55:01.169704
+2024-01-25 11:55:01,172 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status
+2024-01-25 11:55:01,187 INFO    WriterThread:8588 [datastore.py:open_for_write():87] open: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\run-squsccys.wandb
+2024-01-25 11:55:01,187 DEBUG   SenderThread:8588 [sender.py:send():382] send: header
+2024-01-25 11:55:01,232 DEBUG   SenderThread:8588 [sender.py:send():382] send: run
+2024-01-25 11:55:01,621 INFO    SenderThread:8588 [dir_watcher.py:__init__():211] watching files in: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files
+2024-01-25 11:55:01,621 INFO    SenderThread:8588 [sender.py:_start_run_threads():1139] run started: squsccys with start time 1706180101.169704
+2024-01-25 11:55:01,639 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: check_version
+2024-01-25 11:55:01,640 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: check_version
+2024-01-25 11:55:01,722 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: run_start
+2024-01-25 11:55:01,746 DEBUG   HandlerThread:8588 [system_info.py:__init__():27] System info init
+2024-01-25 11:55:01,746 DEBUG   HandlerThread:8588 [system_info.py:__init__():42] System info init done
+2024-01-25 11:55:01,746 INFO    HandlerThread:8588 [system_monitor.py:start():194] Starting system monitor
+2024-01-25 11:55:01,746 INFO    SystemMonitor:8588 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-25 11:55:01,747 INFO    HandlerThread:8588 [system_monitor.py:probe():214] Collecting system info
+2024-01-25 11:55:01,750 INFO    SystemMonitor:8588 [interfaces.py:start():190] Started cpu monitoring
+2024-01-25 11:55:01,751 INFO    SystemMonitor:8588 [interfaces.py:start():190] Started disk monitoring
+2024-01-25 11:55:01,752 INFO    SystemMonitor:8588 [interfaces.py:start():190] Started gpu monitoring
+2024-01-25 11:55:01,757 INFO    SystemMonitor:8588 [interfaces.py:start():190] Started memory monitoring
+2024-01-25 11:55:01,768 INFO    SystemMonitor:8588 [interfaces.py:start():190] Started network monitoring
+2024-01-25 11:55:01,778 DEBUG   HandlerThread:8588 [system_info.py:probe():151] Probing system
+2024-01-25 11:55:01,779 DEBUG   HandlerThread:8588 [system_info.py:_probe_git():136] Probing git
+2024-01-25 11:55:01,857 DEBUG   HandlerThread:8588 [system_info.py:_probe_git():144] Probing git done
+2024-01-25 11:55:01,857 DEBUG   HandlerThread:8588 [system_info.py:probe():199] Probing system done
+2024-01-25 11:55:01,857 DEBUG   HandlerThread:8588 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19041-SP0', 'python': '3.7.16', 'heartbeatAt': '2024-01-25T10:55:01.778824', 'startedAt': '2024-01-25T10:55:01.154720', 'docker': None, 'cuda': None, 'args': ('-architecture', 'gmm'), 'state': 'running', 'program': 'MainWAndB.py', 'codePathLocal': 'MainWAndB.py', 'codePath': 'MainWAndB.py', 'git': {'remote': 'https://github.com/Michelfeit/proactive.git', 'commit': '05893cad3fa75d696b2a5e6e796ad411fbdaf673'}, 'email': None, 'root': 'C:/Users/mich0003/Repos/BachelorPP/proactive', 'host': 'IMM-IUMS-PC11', 'username': 'mich0003', 'executable': 'C:\\Users\\mich0003\\AppData\\Local\\anaconda3\\envs\\proactive\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 3401.0, 'min': 0.0, 'max': 3401.0}, 'cpu_freq_per_core': [{'current': 3401.0, 'min': 0.0, 'max': 3401.0}], 'disk': {'/': {'total': 446.78710556030273, 'used': 360.01168060302734}}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 63.91298294067383}}
+2024-01-25 11:55:01,857 INFO    HandlerThread:8588 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-25 11:55:01,857 INFO    HandlerThread:8588 [system_monitor.py:probe():227] Publishing system info
+2024-01-25 11:55:01,857 DEBUG   HandlerThread:8588 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-01-25 11:55:02,632 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\conda-environment.yaml
+2024-01-25 11:55:03,954 DEBUG   HandlerThread:8588 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-25 11:55:03,955 INFO    HandlerThread:8588 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-25 11:55:03,959 DEBUG   SenderThread:8588 [sender.py:send():382] send: files
+2024-01-25 11:55:03,959 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-25 11:55:03,970 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-25 11:55:03,970 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: python_packages
+2024-01-25 11:55:03,971 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:55:03,971 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:55:03,971 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:55:04,171 DEBUG   SenderThread:8588 [sender.py:send():382] send: telemetry
+2024-01-25 11:55:04,495 INFO    wandb-upload_0:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\AppData\Local\Temp\tmp0rl1w751wandb\mozgp3dk-wandb-metadata.json
+2024-01-25 11:55:04,639 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\conda-environment.yaml
+2024-01-25 11:55:04,640 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:04,640 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-metadata.json
+2024-01-25 11:55:04,640 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\requirements.txt
+2024-01-25 11:55:06,658 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:07,062 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:08,673 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:10,601 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:10,603 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:10,603 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:10,603 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:10,689 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:10,690 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:12,612 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:12,704 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:14,155 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:14,156 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:14,157 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:14,157 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:14,158 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:14,158 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:14,158 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:14,159 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:14,709 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:14,710 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:16,738 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:18,123 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:18,751 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:18,969 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:55:18,970 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:55:18,985 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:55:20,626 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:20,627 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:20,627 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:20,628 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:20,762 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:20,763 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:22,788 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:23,539 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:24,123 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:24,124 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:24,124 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:24,124 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:24,125 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:24,126 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:24,126 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:24,126 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:24,803 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:24,804 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:26,827 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:28,849 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:29,052 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:30,430 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:30,431 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:30,431 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:30,431 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:30,870 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:30,871 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:32,889 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:33,904 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:33,904 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:33,905 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:33,906 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:33,906 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:33,907 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:33,907 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:33,907 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:33,979 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:55:33,980 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:55:33,995 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:55:34,234 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:34,915 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:34,916 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:34,916 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\config.yaml
+2024-01-25 11:55:38,947 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:39,846 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:40,199 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:40,199 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:40,200 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:40,200 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:40,959 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:40,960 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:43,690 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:43,691 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:43,692 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:43,692 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:43,694 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:43,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:43,694 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:43,695 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:43,982 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:44,990 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:45,717 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:48,993 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:55:48,994 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:55:49,009 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:55:49,024 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:50,008 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:50,009 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:50,009 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:50,010 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:50,026 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:51,016 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:51,032 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:53,057 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:53,484 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:53,485 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:53,486 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:53,486 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:53,487 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:53,487 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:53,487 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:53,488 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:55:54,074 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:55:55,076 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:56,418 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:55:59,116 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:55:59,811 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:55:59,812 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:55:59,812 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:55:59,813 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:00,127 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:01,129 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:01,771 DEBUG   SystemMonitor:8588 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-25 11:56:01,772 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:56:01,772 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:03,293 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:03,294 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:03,295 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:03,295 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:03,295 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:03,296 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:03,296 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:03,296 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:04,011 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:56:04,011 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:56:04,012 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:56:04,159 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:05,166 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:07,237 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:09,210 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:09,804 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:09,805 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:09,805 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:09,806 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:10,221 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:11,234 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:12,717 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:13,290 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:13,291 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:13,291 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:13,292 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:13,293 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:13,293 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:13,293 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:13,294 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:14,271 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:15,284 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:17,310 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:18,224 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:19,024 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:56:19,025 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:56:19,025 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:56:19,336 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:19,583 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:19,584 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:19,584 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:19,585 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:20,351 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:21,354 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:23,060 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:23,061 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:23,061 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:23,062 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:23,063 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:23,063 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:23,063 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:23,064 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:23,360 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:23,361 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:24,071 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:25,380 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:27,382 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:29,389 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:29,398 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:29,414 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:29,415 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:29,415 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:29,416 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:30,395 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:31,409 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:31,786 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:56:32,918 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:32,919 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:32,919 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:32,919 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:32,920 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:32,921 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:32,921 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:32,921 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:33,425 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:34,038 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:56:34,054 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:56:34,054 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:56:35,288 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:35,444 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:37,461 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:39,203 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:39,204 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:39,204 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:39,205 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:39,472 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:39,473 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:41,217 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:41,485 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:42,693 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:42,693 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:42,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:42,694 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:42,696 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:42,696 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:42,696 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:42,697 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:43,497 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:43,498 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:45,523 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:46,614 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:47,549 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:48,999 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:48,999 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:49,000 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:49,000 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:49,029 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:56:49,060 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:56:49,060 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:56:49,573 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:49,574 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:51,596 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:51,926 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:52,550 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:52,550 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:52,551 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:52,551 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:52,552 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:52,552 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:52,553 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:52,553 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:52,603 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:53,615 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:55,628 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:57,510 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:56:57,640 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:56:59,192 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:56:59,193 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:56:59,193 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:56:59,194 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:56:59,659 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:56:59,660 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:01,683 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:01,793 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:57:02,690 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:02,692 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:02,692 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:02,693 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:02,694 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:02,694 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:02,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:02,695 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:02,695 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:02,697 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:03,700 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:04,031 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:57:04,077 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:57:04,077 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:57:04,711 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:05,726 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:07,749 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:08,618 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:08,998 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:08,998 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:08,998 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:08,999 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:09,764 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:09,765 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:10,773 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:11,785 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:12,497 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:12,497 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:12,498 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:12,498 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:12,499 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:12,499 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:12,500 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:12,500 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:12,802 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:12,802 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:13,806 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:14,517 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:17,839 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:18,801 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:18,802 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:18,802 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:18,803 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:18,847 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:19,036 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:57:19,083 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:57:19,083 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:57:19,858 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:20,298 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:20,866 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:22,283 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:22,284 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:22,285 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:22,285 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:22,287 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:22,288 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:22,288 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:22,288 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:22,881 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:22,882 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:23,895 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:26,224 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:27,935 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:28,604 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:28,605 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:28,605 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:28,606 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:28,945 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:28,946 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:29,960 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:31,514 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:31,803 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:57:31,975 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:32,094 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:32,095 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:32,095 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:32,096 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:32,097 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:32,097 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:32,097 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:32,098 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:32,980 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:32,981 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:33,988 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:34,052 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:57:34,083 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:57:34,083 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:57:37,016 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:38,016 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:38,391 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:38,392 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:38,392 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:38,393 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:39,020 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:40,035 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:41,051 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:41,954 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:41,955 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:41,956 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:41,956 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:41,957 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:41,957 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:41,957 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:41,958 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:42,061 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:42,961 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:43,070 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:44,075 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:48,137 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:48,489 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:48,507 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:48,507 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:48,508 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:48,508 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:49,056 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:57:49,087 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:57:49,087 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:57:49,150 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:49,150 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:51,990 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:51,991 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:51,991 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:51,992 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:51,993 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:51,993 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:51,994 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:51,994 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:52,165 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:53,175 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:54,008 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:57:57,209 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:58,312 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:57:58,313 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:57:58,313 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:57:58,314 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:57:59,224 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:57:59,225 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:57:59,317 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:01,796 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:01,797 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:01,797 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:01,797 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:01,798 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:01,799 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:01,799 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:01,799 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:01,808 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:58:02,248 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:03,259 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:04,064 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:58:04,111 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:58:04,111 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:58:04,346 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:05,270 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:07,293 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:08,131 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:08,132 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:08,132 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:08,132 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:08,295 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:09,307 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:10,151 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:11,329 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:11,834 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:11,835 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:11,836 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:11,836 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:11,837 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:11,837 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:11,837 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:11,838 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:12,342 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:13,350 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:15,376 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:15,842 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:17,399 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:18,190 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:18,190 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:18,191 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:18,191 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:18,401 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:19,066 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:58:19,129 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:58:19,129 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:58:19,413 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:21,176 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:21,432 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:21,763 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:21,763 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:21,764 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:21,765 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:21,765 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:21,766 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:21,766 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:21,766 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:22,438 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:23,443 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:25,467 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:26,711 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:27,483 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:28,089 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:28,090 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:28,090 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:28,091 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:28,494 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:29,504 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:31,712 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:31,712 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:31,712 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:31,713 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:31,713 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:31,714 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:31,714 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:31,715 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:31,715 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:31,819 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:58:32,520 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:33,532 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:34,069 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:58:34,133 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:58:34,133 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:58:35,554 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:37,571 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:37,681 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:38,209 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:38,210 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:38,210 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:38,211 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:38,575 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:39,585 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:41,693 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:41,693 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:41,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:41,694 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:41,695 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:41,695 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:41,695 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:41,696 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:42,624 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:42,702 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:43,635 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:45,658 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:47,682 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:47,972 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:47,990 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:47,991 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:47,991 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:47,992 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:48,695 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:49,070 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:58:49,149 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:58:49,149 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:58:49,696 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:51,456 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:51,457 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:51,457 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:51,458 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:51,458 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:51,459 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:51,459 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:51,460 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:51,710 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:51,711 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:53,474 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:53,726 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:55,732 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:57,742 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:58:57,753 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:58:57,754 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:58:57,754 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:58:57,755 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:58:58,751 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:58:58,767 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:58:59,757 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:01,254 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:01,254 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:01,255 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:01,255 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:01,256 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:01,256 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:01,256 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:01,257 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:01,777 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:01,778 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:01,824 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:59:03,789 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:03,837 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:04,072 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:59:04,166 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:59:04,166 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:59:05,802 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:07,549 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:07,550 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:07,550 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:07,551 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:07,816 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:07,817 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:09,563 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:09,833 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:11,021 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:11,022 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:11,023 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:11,023 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:11,024 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:11,024 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:11,024 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:11,025 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:11,850 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:11,851 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:14,970 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:15,873 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:17,342 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:17,343 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:17,344 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:17,344 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:17,899 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:17,900 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:19,074 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:59:19,182 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:59:19,182 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:59:19,904 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:20,252 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:20,856 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:20,856 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:20,857 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:20,857 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:20,858 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:20,858 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:20,859 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:20,859 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:20,918 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:21,933 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:25,807 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:25,968 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:27,311 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:27,312 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:27,312 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:27,313 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:27,976 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:27,977 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:29,999 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:30,805 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:30,805 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:30,805 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:30,806 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:30,807 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:30,807 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:30,807 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:30,807 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:30,808 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:31,010 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:31,829 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 11:59:32,018 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:34,083 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:59:34,193 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:59:34,193 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:59:36,050 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:36,752 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:37,120 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:37,120 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:37,121 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:37,121 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:38,075 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:38,076 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:40,090 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:40,606 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:40,607 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:40,607 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:40,608 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:40,609 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:40,609 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:40,609 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:40,610 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:41,105 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:42,120 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:42,632 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:46,161 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:46,958 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:46,959 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:46,959 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:46,960 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:47,175 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:47,972 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:48,176 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:49,095 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 11:59:49,203 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 11:59:49,203 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 11:59:50,441 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:50,442 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:50,442 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:50,443 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:50,443 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:50,444 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:50,444 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:50,444 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:51,213 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:52,226 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:53,369 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 11:59:54,253 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:56,277 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:56,743 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 11:59:56,744 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 11:59:56,744 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 11:59:56,745 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 11:59:57,286 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 11:59:58,297 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 11:59:58,764 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:00,218 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:00,219 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:00,219 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:00,219 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:00,220 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:00,221 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:00,221 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:00,221 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:00,315 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:00,316 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:01,841 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:00:02,341 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:04,101 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:00:04,102 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:04,209 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:00:04,209 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:00:04,349 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:06,375 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:06,522 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:06,523 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:06,523 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:06,523 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:07,382 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:08,387 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:09,434 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:10,026 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:10,026 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:10,027 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:10,027 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:10,028 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:10,028 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:10,029 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:10,029 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:10,403 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:10,404 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:12,417 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:14,438 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:14,974 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:16,456 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:16,552 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:16,553 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:16,553 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:16,553 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:17,459 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:18,471 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:19,114 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:00:19,210 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:00:19,210 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:00:20,073 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:20,074 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:20,075 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:20,075 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:20,075 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:20,076 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:20,077 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:20,077 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:20,077 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:20,484 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:20,485 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:22,510 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:24,531 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:26,041 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:26,411 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:26,412 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:26,412 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:26,413 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:26,547 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:26,548 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:28,573 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:29,916 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:29,917 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:29,918 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:29,918 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:29,919 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:29,919 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:29,919 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:29,920 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:30,587 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:30,588 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:31,854 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:00:31,854 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:32,600 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:34,125 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:00:34,200 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:00:34,200 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:00:34,608 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:36,232 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:36,233 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:36,233 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:36,234 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:36,612 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:36,613 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:37,239 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:38,629 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:39,725 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:39,726 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:39,727 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:39,727 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:39,728 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:39,728 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:39,728 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:39,729 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:40,644 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:40,645 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:42,644 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:42,673 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:44,700 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:46,047 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:46,048 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:46,048 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:46,049 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:46,722 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:46,723 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:48,058 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:48,736 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:49,125 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:00:49,220 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:00:49,220 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:00:49,542 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:49,543 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:49,543 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:49,544 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:49,544 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:49,545 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:49,545 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:49,545 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:49,739 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:50,743 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:52,758 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:53,477 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:54,785 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:55,882 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:55,883 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:55,883 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:55,884 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:56,807 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:56,808 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:58,795 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:00:58,817 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:00:59,406 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:59,408 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:00:59,408 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:59,408 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:59,409 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:59,409 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:00:59,409 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:00:59,410 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:00:59,827 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:00:59,827 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:00,833 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:01,856 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:01:04,129 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:01:04,130 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:04,240 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:01:04,240 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:01:04,870 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:05,863 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:05,864 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:05,864 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:05,865 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:05,884 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:06,890 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:07,901 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:09,338 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:09,339 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:09,340 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:09,340 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:09,341 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:09,341 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:09,342 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:09,342 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:09,342 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:09,917 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:09,918 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:10,921 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:14,949 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:15,280 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:15,657 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:15,658 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:15,658 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:15,659 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:15,954 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:16,964 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:17,969 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:19,133 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:01:19,225 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:19,226 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:19,226 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:19,227 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:19,228 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:19,228 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:19,228 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:19,229 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:19,244 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:01:19,244 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:01:19,993 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:19,994 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:20,399 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:20,997 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:25,025 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:25,595 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:25,614 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:25,615 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:25,615 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:25,616 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:26,033 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:26,034 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:27,037 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:29,155 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:29,155 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:29,156 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:29,157 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:29,157 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:29,158 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:29,158 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:29,158 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:30,057 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:30,058 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:31,064 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:31,174 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:31,866 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:01:33,082 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:34,141 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:01:34,252 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:01:34,252 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:01:35,107 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:35,539 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:35,539 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:35,540 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:35,540 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:36,117 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:36,118 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:36,556 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:37,120 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:39,102 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:39,103 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:39,103 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:39,104 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:39,104 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:39,105 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:39,105 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:39,105 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:39,134 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:40,140 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:41,149 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:42,070 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:43,163 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:45,187 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:45,371 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:45,372 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:45,372 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:45,373 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:46,196 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:46,197 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:47,202 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:47,391 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:48,936 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:48,937 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:48,937 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:48,938 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:48,939 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:48,939 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:48,939 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:48,940 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:49,146 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:01:49,224 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:49,225 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:49,255 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:01:49,255 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:01:50,232 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:51,242 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:52,977 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:53,260 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:55,282 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:55,525 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:55,526 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:55,526 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:55,527 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:56,289 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:01:56,290 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:57,296 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:01:58,519 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:01:59,106 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:59,107 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:01:59,108 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:59,108 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:59,109 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:59,109 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:01:59,110 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:01:59,110 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:01:59,311 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:00,322 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:01,335 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:01,881 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:02:04,102 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:04,152 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:02:04,263 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:02:04,263 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:02:05,384 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:05,395 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:05,396 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:05,396 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:05,397 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:06,393 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:06,394 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:07,407 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:08,983 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:08,984 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:08,985 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:08,985 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:08,986 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:08,986 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:08,986 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:08,987 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:09,434 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:09,988 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:10,444 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:11,459 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:13,476 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:15,083 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:15,469 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:15,470 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:15,470 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:15,470 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:15,486 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:15,487 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:16,495 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:17,495 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:19,053 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:19,054 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:19,055 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:19,055 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:19,056 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:19,056 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:19,056 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:19,057 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:19,156 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:02:19,282 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:02:19,282 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:02:19,519 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:20,523 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:20,524 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:21,535 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:23,557 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:25,441 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:25,442 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:25,442 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:25,443 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:25,577 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:25,578 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:26,457 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:26,590 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:27,597 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:29,026 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:29,027 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:29,028 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:29,028 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:29,029 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:29,029 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:29,030 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:29,030 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:29,619 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:29,620 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:30,630 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:31,634 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:31,884 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:02:31,885 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:33,648 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:34,157 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:02:34,298 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:02:34,298 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:02:35,362 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:35,363 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:35,363 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:35,364 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:35,672 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:35,673 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:36,681 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:37,371 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:37,685 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:38,993 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:38,993 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:38,994 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:38,994 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:38,995 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:38,995 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:38,996 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:38,996 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:39,696 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:39,697 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:40,710 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:41,719 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:43,036 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:43,735 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:44,749 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:45,520 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:45,521 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:45,521 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:45,522 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:45,758 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:46,766 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:48,480 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:49,064 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:49,064 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:49,065 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:49,065 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:49,066 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:49,066 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:49,067 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:49,067 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:49,162 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:02:49,317 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:02:49,317 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:02:49,801 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:50,812 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:52,836 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:54,046 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:02:54,849 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:55,409 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:55,410 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:55,410 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:55,411 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:55,851 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:56,854 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:58,860 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:02:58,944 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:58,945 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:02:58,945 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:58,946 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:58,947 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:58,947 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:02:58,947 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:02:58,948 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:02:59,865 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:02:59,958 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:03:00,869 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:01,888 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:03:02,876 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:04,166 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:03:04,324 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-25 12:03:04,324 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: stop_status
+2024-01-25 12:03:04,892 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:05,246 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:03:05,263 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:05,263 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:05,263 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:05,264 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:05,898 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:03:06,906 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:08,813 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:08,814 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:08,814 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:08,814 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:08,815 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:08,816 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:08,816 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:08,816 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:08,922 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:03:08,923 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:10,841 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:03:10,935 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:12,946 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:14,956 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:15,143 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:15,144 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:15,144 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:15,145 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:15,960 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:03:16,150 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:03:16,971 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:18,690 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:18,691 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-25 12:03:18,692 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:18,692 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:18,693 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:18,693 DEBUG   SenderThread:8588 [sender.py:send():382] send: history
+2024-01-25 12:03:18,693 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: summary_record
+2024-01-25 12:03:18,694 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:18,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: telemetry
+2024-01-25 12:03:18,694 DEBUG   SenderThread:8588 [sender.py:send():382] send: exit
+2024-01-25 12:03:18,694 INFO    SenderThread:8588 [sender.py:send_exit():589] handling exit code: 0
+2024-01-25 12:03:18,694 INFO    SenderThread:8588 [sender.py:send_exit():591] handling runtime: 496
+2024-01-25 12:03:18,695 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:18,695 INFO    SenderThread:8588 [sender.py:send_exit():597] send defer
+2024-01-25 12:03:18,695 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,695 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-25 12:03:18,696 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,696 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-25 12:03:18,696 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 1
+2024-01-25 12:03:18,696 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,696 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-25 12:03:18,696 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,696 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-25 12:03:18,696 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 2
+2024-01-25 12:03:18,697 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,697 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-25 12:03:18,697 INFO    HandlerThread:8588 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-25 12:03:18,697 DEBUG   SystemMonitor:8588 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-25 12:03:18,697 DEBUG   SystemMonitor:8588 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-25 12:03:18,697 INFO    HandlerThread:8588 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-25 12:03:18,703 INFO    HandlerThread:8588 [interfaces.py:finish():202] Joined disk monitor
+2024-01-25 12:03:18,732 INFO    HandlerThread:8588 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-25 12:03:18,733 INFO    HandlerThread:8588 [interfaces.py:finish():202] Joined memory monitor
+2024-01-25 12:03:18,733 INFO    HandlerThread:8588 [interfaces.py:finish():202] Joined network monitor
+2024-01-25 12:03:18,733 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,733 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-25 12:03:18,733 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 3
+2024-01-25 12:03:18,733 DEBUG   SenderThread:8588 [sender.py:send():382] send: stats
+2024-01-25 12:03:18,734 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,734 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-25 12:03:18,734 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,734 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-25 12:03:18,734 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 4
+2024-01-25 12:03:18,735 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,735 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-25 12:03:18,735 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,735 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-25 12:03:18,735 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 5
+2024-01-25 12:03:18,735 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,735 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-25 12:03:18,736 DEBUG   SenderThread:8588 [sender.py:send():382] send: summary
+2024-01-25 12:03:18,736 INFO    SenderThread:8588 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-25 12:03:18,737 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,737 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-25 12:03:18,737 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 6
+2024-01-25 12:03:18,737 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,737 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-25 12:03:18,737 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,737 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-25 12:03:18,742 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: status_report
+2024-01-25 12:03:18,924 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 7
+2024-01-25 12:03:18,924 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:18,924 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-25 12:03:18,925 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:18,925 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-25 12:03:18,989 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:03:18,990 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:18,990 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\config.yaml
+2024-01-25 12:03:19,693 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-25 12:03:20,945 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 8
+2024-01-25 12:03:20,945 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: poll_exit
+2024-01-25 12:03:20,946 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:20,946 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-25 12:03:20,946 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:20,946 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-25 12:03:20,946 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 9
+2024-01-25 12:03:20,947 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:20,947 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-25 12:03:20,947 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:20,947 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-25 12:03:20,947 INFO    SenderThread:8588 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-25 12:03:21,005 INFO    Thread-16 :8588 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:21,006 INFO    SenderThread:8588 [dir_watcher.py:finish():388] scan: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files
+2024-01-25 12:03:21,006 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\conda-environment.yaml conda-environment.yaml
+2024-01-25 12:03:21,007 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\config.yaml config.yaml
+2024-01-25 12:03:21,010 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log output.log
+2024-01-25 12:03:21,012 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\requirements.txt requirements.txt
+2024-01-25 12:03:21,015 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-metadata.json wandb-metadata.json
+2024-01-25 12:03:21,015 INFO    SenderThread:8588 [dir_watcher.py:finish():402] scan save: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json wandb-summary.json
+2024-01-25 12:03:21,018 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 10
+2024-01-25 12:03:21,018 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:21,018 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-25 12:03:21,021 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:21,021 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-25 12:03:21,021 INFO    SenderThread:8588 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-25 12:03:21,419 INFO    wandb-upload_1:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\config.yaml
+2024-01-25 12:03:21,428 INFO    wandb-upload_0:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\conda-environment.yaml
+2024-01-25 12:03:21,585 INFO    wandb-upload_3:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\requirements.txt
+2024-01-25 12:03:21,722 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-25 12:03:21,722 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: poll_exit
+2024-01-25 12:03:21,882 INFO    wandb-upload_4:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\wandb-summary.json
+2024-01-25 12:03:21,892 INFO    wandb-upload_2:8588 [upload_job.py:push():131] Uploaded file C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\files\output.log
+2024-01-25 12:03:22,099 INFO    Thread-15 :8588 [sender.py:transition_state():617] send defer: 11
+2024-01-25 12:03:22,099 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:22,099 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-25 12:03:22,100 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:22,100 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-25 12:03:22,100 INFO    SenderThread:8588 [file_pusher.py:join():181] waiting for file pusher
+2024-01-25 12:03:22,100 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 12
+2024-01-25 12:03:22,100 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:22,100 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-25 12:03:22,100 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:22,100 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-25 12:03:22,101 INFO    SenderThread:8588 [file_stream.py:finish():595] file stream finish called
+2024-01-25 12:03:22,736 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-25 12:03:22,784 INFO    SenderThread:8588 [file_stream.py:finish():599] file stream finish is done
+2024-01-25 12:03:22,784 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 13
+2024-01-25 12:03:22,784 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: poll_exit
+2024-01-25 12:03:22,784 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:22,784 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-25 12:03:22,785 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:22,785 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-25 12:03:22,785 INFO    SenderThread:8588 [sender.py:transition_state():617] send defer: 14
+2024-01-25 12:03:22,785 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: defer
+2024-01-25 12:03:22,785 DEBUG   SenderThread:8588 [sender.py:send():382] send: final
+2024-01-25 12:03:22,785 INFO    HandlerThread:8588 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-25 12:03:22,785 DEBUG   SenderThread:8588 [sender.py:send():382] send: footer
+2024-01-25 12:03:22,786 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: defer
+2024-01-25 12:03:22,786 INFO    SenderThread:8588 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-25 12:03:22,786 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-25 12:03:22,787 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: poll_exit
+2024-01-25 12:03:22,787 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-25 12:03:22,788 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: server_info
+2024-01-25 12:03:22,788 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-25 12:03:22,788 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-25 12:03:22,790 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: job_info
+2024-01-25 12:03:22,790 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: server_info
+2024-01-25 12:03:22,934 DEBUG   SenderThread:8588 [sender.py:send_request():409] send_request: job_info
+2024-01-25 12:03:22,934 DEBUG   HandlerThread:8588 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-25 12:03:22,935 INFO    HandlerThread:8588 [handler.py:finish():869] shutting down handler
+2024-01-25 12:03:23,791 INFO    WriterThread:8588 [datastore.py:close():296] close: C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_115501-squsccys\run-squsccys.wandb
+2024-01-25 12:03:23,949 INFO    SenderThread:8588 [sender.py:finish():1572] shutting down sender
+2024-01-25 12:03:23,949 INFO    SenderThread:8588 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-25 12:03:23,949 INFO    SenderThread:8588 [file_pusher.py:join():181] waiting for file pusher

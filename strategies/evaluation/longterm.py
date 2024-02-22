@@ -72,7 +72,7 @@ class Longterm_Strategy(Evaluation_Strategy):
                     # whenever a sequence in that batch ended, swap prediction with a zero
                     for seq in range(len(trim_type)):
                         if(sequence_ended[seq]):
-                            pred_types[seq] = torch.tensor(0)
+                            pred_types[seq] = torch.tensor(1)
                             pred_times[seq] = torch.tensor(0)
                             pred_goals[seq] = torch.tensor(0)
 

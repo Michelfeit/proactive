@@ -18,9 +18,9 @@ from myTransformer.Models import Transformer, TransformerMixure
 MODEL_PATH_PREFIX = "trainedModels\\tf"
 MODEL_PATH_SUFFIX = ".pth.tar"
 
-SWEEP_NAME_GMM = "gmm_1.1"
-SWEEP_NAME_HAWKES = "hawkes_1.1"
-SWEEP_NAME_FLOWS = "flows_1.0"
+SWEEP_NAME_GMM = "gmm_depend"
+SWEEP_NAME_HAWKES = "hawkes_depend"
+SWEEP_NAME_FLOWS = "flows_test_noHawk"
 
 #python MainWAndB.py -architecture
 
@@ -50,7 +50,7 @@ def init_gmm():
     print("Initialize gmm transformer...")
     print()
     sweep_config = {
-    'method': 'random'
+    'method': 'grid'
     }
     metric = {
     'name': 'test_loss',
@@ -59,25 +59,22 @@ def init_gmm():
 
     parameters_dict = {
         'learning_rate': {
-            'values': [0.000025,0.00005, 0.0001]
+            'values': [0.0001]
         },
         'epochs': {
             'value': 50
         },
         'num_mix_components': {
-            'values': [8,16,32] #d_inner = 4*d_model
-        },
-        'd_model': {
-            'values': [64, 128] #d_inner = 4*d_model
+            'values': [4,5,6] #d_inner = 4*d_model
         },
         'n_layers': {
-            'value': 4
+            'values': [3,4,5,6]
         },
         'batch_size': {
             'value': 4
         },
         'n_head': {
-            'value': 4
+            'values': [2,4,8]
         },
         'd_k': {
             'values': [32, 64] # also used for d_v
@@ -118,13 +115,10 @@ def init_hawkes():
             'value': 0.0001
         },
         'epochs': {
-            'value': 35
-        },
-        'd_model': {
-            'values': [256, 512] #d_inner = 4*d_model
+            'value': 50
         },
         'n_layers': {
-            'value': 4
+            'values': [3]
         },
         'batch_size': {
             'value': 4
@@ -133,10 +127,10 @@ def init_hawkes():
             'values': [0, 128]
         },
         'n_head': {
-            'value': 4
+            'values': [8]
         },
         'd_k': {
-            'values': [128,512] # also used for d_v
+            'values': [128] # also used for d_v
         },
         'dropout': {
             'value': 0.1
@@ -145,7 +139,7 @@ def init_hawkes():
             'value': 0
         },
         'activation': {
-            'values': ['softplus', 'relu']
+            'values': ['softplus']
         },
         'device':{
             'value': 'cuda'
@@ -175,13 +169,10 @@ def init_flows():
             'value': 0.0001
         },
         'epochs': {
-            'value': 35
-        },
-        'd_model': {
-            'values': [256, 512] #d_inner = 4*d_model
+            'value': 50
         },
         'n_layers': {
-            'value': 4
+            'values': [3,4,5,6]
         },
         'batch_size': {
             'value': 4
@@ -190,10 +181,10 @@ def init_flows():
             'values': [0, 128]
         },
         'n_head': {
-            'value': 4
+            'values': [2,4,8]
         },
         'd_k': {
-            'values': [128,512] # also used for d_v
+            'values': [32, 64, 128, 256] # also used for d_v
         },
         'dropout': {
             'value': 0.1
@@ -202,7 +193,7 @@ def init_flows():
             'value': 0
         },
         'activation': {
-            'values': ['softplus', 'relu']
+            'values': ['softplus']
         },
         'device':{
             'value': 'cuda'

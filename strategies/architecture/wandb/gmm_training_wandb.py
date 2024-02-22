@@ -22,7 +22,7 @@ TYPE_LOSS_SCALE = 1
 
 def train(config=None):
     with wandb.init(config=config):
-        print("Training hawkes transformer...")
+        print("Training gmm transformer...")
         config = wandb.config
         pprint.pprint(config)
         trainloader, testloader, num_types, num_goals = initial_dataloader_preparation(config)
@@ -33,8 +33,8 @@ def train(config=None):
         model = TransformerMixure(
             num_types=num_types,
             num_goals=num_goals,
-            d_model=config.d_model,
-            d_inner=config.d_model * 4,
+            d_model=config.n_head * config.d_k,
+            d_inner=config.n_head * config.d_k * 4,
             n_layers=config.n_layers,
             n_head=config.n_head,
             d_k=config.d_k,

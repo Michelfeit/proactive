@@ -20,14 +20,11 @@ def get_inter_time_dist(model, opt, event_data:EventData_Trim, raw_params) -> to
     log_mean, log_std = event_data._get_statistics(opt)
 
     locs = raw_params[..., :model.num_mix_components]
-    print(locs)
     log_scales = raw_params[..., model.num_mix_components: (2 * model.num_mix_components)]
-    print(log_scales)
     log_weights = raw_params[..., (2 * model.num_mix_components):]
 
     log_scales = clamp_preserve_gradients(log_scales, -5.0, 3.0)
     log_weights = torch.log_softmax(log_weights, dim=-1)
-    print(log_weights)
     
     return LogNormalMixtureDistribution(
         locs=locs,
@@ -47,13 +44,9 @@ def log_probability(inter_time_dist:LogNormalMixtureDistribution, event_time_gap
     # You can comment this section of the code out if you don't want to implement the log_survival_function 
     # for the distribution that you are using. This will make the likelihood computation slightly inaccurate,
     # but the difference shouldn't be significant if you are working with long sequences.
-    # print("2HELP")
     # last_event_idx = get_non_pad_mask(inter_times).sum(-1, keepdim=True).long()  # (batch_size, 1) TODO
-    # print("3HELP")
     # log_surv_all = inter_time_dist.log_survival_function(inter_times)  # (batch_size, seq_len)
-    # print("4HELP", log_surv_all)
     # log_surv_last = torch.gather(log_surv_all, dim=-1, index=last_event_idx).squeeze(-1)  # (batch_size,)
-    # print("5HELP", log_surv_last)
     # if self.num_marks > 1:
     #     mark_logits = torch.log_softmax(self.mark_linear(context), dim=-1)  # (batch_size, seq_len, num_marks)
     #     mark_dist = Categorical(logits=mark_logits)
@@ -75,6 +68,25 @@ def type_loss(prediction, types, loss_func):
 
     loss = torch.sum(loss)
     return loss, correct_num
+
+def time_loss_gmm(samples, time_gap):
+    diff = samples - time_gap[:,1:]
+    se = torch.sum(torch.abs(diff))
+    return se
+
+def get_next_time_prediction(samples):
+    preds = []
+    j = 0
+    for sequence in samples:
+        i = 0
+        for time in sequence[1:]:
+            if(time == 0):
+                break
+            i += 1
+        preds.append(samples[j][i])
+        j+=1
+    next_time = torch.tensor(preds)
+    return next_time
 
 # returns all positions that are not padding. the non pad positions are marked with a float 1.
 def get_non_pad_mask(seq):

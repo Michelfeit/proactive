@@ -1,0 +1,845 @@
+Training hawkes transformer...
+{'activation': 'softplus', 'batch_size': 4, 'd_k': 128, 'd_rnn': 128, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 2, 'n_layers': 3, 'smooth': 0}
+Loading All Datasets...
+45 9
+d_model: 256
+d_inner 1024
+d_k 128
+d_k 128
+WITH RNN
+[ Epoch 1 ]
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:50,  2.92s/it]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+  - (Training)    loglikelihood: -0.22209, accuracy:  0.23567, RMSE:  1.01017, elapse: 0.099 min
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+  - (Testing)     loglikelihood:  0.06921, accuracy:  0.33591, RMSE:  1.13517, elapse: 0.057 min
+  - [Info] Maximum ll:  0.06921, Maximum accuracy:  0.33591, Minimum RMSE:  1.13517
+improvement in epoch 1
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+  - (Testing)     loglikelihood:  0.36146, accuracy:  0.52510, RMSE:  1.08567, elapse: 0.060 min
+  - [Info] Maximum ll:  0.36146, Maximum accuracy:  0.52510, Minimum RMSE:  1.08567
+improvement in epoch 2
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.01s/it]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+  - (Training)    loglikelihood:  0.45510, accuracy:  0.56243, RMSE:  0.85673, elapse: 0.102 min
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+WE DO BE USING RNN
+  - (Testing)     loglikelihood:  0.49989, accuracy:  0.57786, RMSE:  1.10173, elapse: 0.059 min
+  - [Info] Maximum ll:  0.49989, Maximum accuracy:  0.57786, Minimum RMSE:  1.08567
+improvement in epoch 3
+[ Epoch 4 ]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+
+  - (Training)   :  70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                         | 85/121 [00:05<00:01, 20.47it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.99s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+
+
+  - (Training)   :  72%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                      | 87/121 [00:05<00:01, 21.01it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.01s/it]
+WE DO BE USING RNN
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.01s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+WE DO BE USING RNN
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:04,  3.04s/it]
+
+  - (Training)   :  69%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                          | 84/121 [00:05<00:01, 20.27it/s]
+WE DO BE USING RNN
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.03s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.02s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.01s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:58,  2.99s/it]
+
+  - (Training)   :  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                               | 81/121 [00:04<00:02, 19.70it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  3.00s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.00s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.87it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Training)   :  69%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 83/121 [00:05<00:01, 20.05it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.02s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNN
+WE DO BE USING RNN
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNN
+  - (Testing)     loglikelihood:  0.84485, accuracy:  0.64350, RMSE:  1.03250, elapse: 0.059 min
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+WE DO BE USING RNNloglikelihood:  0.84485, accuracy:  0.64350, RMSE:  1.03250, elapse: 0.059 min
+WE DO BE USING RNNloglikelihood:  0.84485, accuracy:  0.64350, RMSE:  1.03250, elapse: 0.059 min
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+improvement in epoch 20kelihood:  0.84485, accuracy:  0.64350, RMSE:  1.03250, elapse: 0.059 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+WE DO BE USING RNNch 20kelihood:  0.84485, accuracy:  0.64350, RMSE:  1.03250, elapse: 0.059 min
+
+  - (Training)   :  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                               | 81/121 [00:05<00:02, 19.60it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:58,  2.99s/it]
+
+  - (Training)   :  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                               | 81/121 [00:05<00:02, 19.60it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:06,  3.05s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Training)   :  70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                         | 85/121 [00:05<00:01, 20.57it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.03s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Training)    loglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:04,  3.04s/it]
+
+  - (Training)   :  70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                         | 85/121 [00:05<00:01, 20.47it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:04,  3.04s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.01s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.78it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Training)   :  69%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 83/121 [00:05<00:01, 20.02it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.00s/it]
+
+  - (Training)   :  69%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 83/121 [00:05<00:01, 20.05it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.98s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.82it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.01s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:57,  2.98s/it]
+
+  - (Training)   :  70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                         | 85/121 [00:04<00:01, 20.63it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.00s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.01s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.81it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Training)   :  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                               | 81/121 [00:05<00:02, 19.59it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:34,  3.06s/it]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.79it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:04,  3.04s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:02,  3.02s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.00s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.01s/it]
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.00s/it]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:59,  3.00s/it]
+
+  - (Training)   :  69%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 83/121 [00:05<00:01, 20.09it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:02<05:59,  2.99s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:01,  3.02s/it]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:00,  3.00s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+
+  - (Training)   :  69%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 83/121 [00:05<00:01, 20.09it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.98s/it]
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:03,  3.03s/it]
+
+  - (Training)   :  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                              | 82/121 [00:05<00:01, 19.80it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+
+  - (Training)   :   1%|█▌                                                                                                                                                                                               | 1/121 [00:03<06:07,  3.06s/it]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+WE DO BE USING RNNloglikelihood:  0.89662, accuracy:  0.67042, RMSE:  0.81881, elapse: 0.102 min
+

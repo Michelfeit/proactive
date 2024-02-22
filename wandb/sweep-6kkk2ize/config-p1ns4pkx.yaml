@@ -1,0 +1,24 @@
+wandb_version: 1
+
+batch_size:
+  value: 4
+d_k:
+  value: 32
+data:
+  value: data/Breakfast/
+device:
+  value: cuda
+dropout:
+  value: 0.1
+epochs:
+  value: 50
+learning_rate:
+  value: 0.0001
+n_head:
+  value: 8
+n_layers:
+  value: 4
+num_mix_components:
+  value: 5
+smooth:
+  value: 0

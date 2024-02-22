@@ -1,0 +1,477 @@
+Training hawkes transformer...
+{'activation': 'softplus', 'batch_size': 4, 'd_k': 256, 'd_rnn': 0, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 4, 'n_layers': 6, 'smooth': 0}
+Loading All Datasets...
+45 9
+d_model: 1024
+d_inner 4096
+d_k 256
+d_k 256
+NO RNN
+[ Epoch 1 ]
+
+
+
+  - (Training)   :  83%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                 | 100/121 [00:07<00:01, 17.08it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:34,  3.05s/it]
+  - (Testing)     loglikelihood:  0.55355, accuracy:  0.27156, RMSE:  1.08386, elapse: 0.060 min
+  - [Info] Maximum ll:  0.55355, Maximum accuracy:  0.27156, Minimum RMSE:  1.08386
+improvement in epoch 1
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.65it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.67714, accuracy:  0.46332, RMSE:  1.07120, elapse: 0.058 min
+  - [Info] Maximum ll:  0.67714, Maximum accuracy:  0.46332, Minimum RMSE:  1.07120
+improvement in epoch 2
+
+
+  - (Training)   :  42%|████████████████████████████████████████████████████████████████████████████████▉                                                                                                               | 51/121 [00:05<00:05, 12.29it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.71889, accuracy:  0.53539, RMSE:  1.05983, elapse: 0.058 min
+  - [Info] Maximum ll:  0.71889, Maximum accuracy:  0.53539, Minimum RMSE:  1.05983
+improvement in epoch 3
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.58it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:34,  3.04s/it]
+  - (Testing)     loglikelihood:  0.75330, accuracy:  0.57529, RMSE:  1.06913, elapse: 0.060 min
+  - [Info] Maximum ll:  0.75330, Maximum accuracy:  0.57529, Minimum RMSE:  1.05983
+improvement in epoch 4
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.46it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.76255, accuracy:  0.57272, RMSE:  1.06277, elapse: 0.059 min
+  - [Info] Maximum ll:  0.76255, Maximum accuracy:  0.57529, Minimum RMSE:  1.05983
+improvement in epoch 5
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.58it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.78216, accuracy:  0.58301, RMSE:  1.05919, elapse: 0.059 min
+  - [Info] Maximum ll:  0.78216, Maximum accuracy:  0.58301, Minimum RMSE:  1.05919
+improvement in epoch 6
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.80799, accuracy:  0.57615, RMSE:  0.85979, elapse: 0.133 min
+  - (Testing)     loglikelihood:  0.77928, accuracy:  0.52896, RMSE:  1.06182, elapse: 0.059 min
+  - [Info] Maximum ll:  0.78216, Maximum accuracy:  0.58301, Minimum RMSE:  1.05919
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.38it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+  - (Testing)     loglikelihood:  0.79201, accuracy:  0.55598, RMSE:  1.05990, elapse: 0.060 min
+  - [Info] Maximum ll:  0.79201, Maximum accuracy:  0.58301, Minimum RMSE:  1.05919
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.38it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.80132, accuracy:  0.61905, RMSE:  1.04968, elapse: 0.059 min
+  - [Info] Maximum ll:  0.80132, Maximum accuracy:  0.61905, Minimum RMSE:  1.04968
+improvement in epoch 9
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.81510, accuracy:  0.61261, RMSE:  1.04837, elapse: 0.059 min
+  - [Info] Maximum ll:  0.81510, Maximum accuracy:  0.61905, Minimum RMSE:  1.04837
+improvement in epoch 10
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.84651, accuracy:  0.60886, RMSE:  0.88154, elapse: 0.133 min
+  - (Testing)     loglikelihood:  0.82690, accuracy:  0.63063, RMSE:  1.04387, elapse: 0.059 min
+  - [Info] Maximum ll:  0.82690, Maximum accuracy:  0.63063, Minimum RMSE:  1.04387
+improvement in epoch 11
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.85725, accuracy:  0.60605, RMSE:  0.81645, elapse: 0.134 min
+  - (Testing)     loglikelihood:  0.83979, accuracy:  0.61905, RMSE:  1.04100, elapse: 0.059 min
+  - [Info] Maximum ll:  0.83979, Maximum accuracy:  0.63063, Minimum RMSE:  1.04100
+improvement in epoch 12
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.30it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+  - (Testing)     loglikelihood:  0.84779, accuracy:  0.62548, RMSE:  1.04446, elapse: 0.059 min
+  - [Info] Maximum ll:  0.84779, Maximum accuracy:  0.63063, Minimum RMSE:  1.04100
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.40it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.85333, accuracy:  0.61776, RMSE:  1.03354, elapse: 0.059 min
+  - [Info] Maximum ll:  0.85333, Maximum accuracy:  0.63063, Minimum RMSE:  1.03354
+improvement in epoch 14
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.84786, accuracy:  0.63578, RMSE:  1.03826, elapse: 0.059 min
+  - [Info] Maximum ll:  0.85333, Maximum accuracy:  0.63578, Minimum RMSE:  1.03354
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.88607, accuracy:  0.62329, RMSE:  0.79558, elapse: 0.134 min
+  - (Testing)     loglikelihood:  0.86371, accuracy:  0.63707, RMSE:  1.03728, elapse: 0.059 min
+  - [Info] Maximum ll:  0.86371, Maximum accuracy:  0.63707, Minimum RMSE:  1.03354
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.32it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.99s/it]
+  - (Testing)     loglikelihood:  0.86169, accuracy:  0.60746, RMSE:  1.05061, elapse: 0.059 min
+  - [Info] Maximum ll:  0.86371, Maximum accuracy:  0.63707, Minimum RMSE:  1.03354
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.47it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.87555, accuracy:  0.63578, RMSE:  1.04414, elapse: 0.059 min
+  - [Info] Maximum ll:  0.87555, Maximum accuracy:  0.63707, Minimum RMSE:  1.03354
+improvement in epoch 18
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.90027, accuracy:  0.62223, RMSE:  0.77094, elapse: 0.134 min
+  - (Testing)     loglikelihood:  0.87056, accuracy:  0.61133, RMSE:  1.03199, elapse: 0.059 min
+  - [Info] Maximum ll:  0.87555, Maximum accuracy:  0.63707, Minimum RMSE:  1.03199
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.90073, accuracy:  0.62399, RMSE:  0.81483, elapse: 0.134 min
+  - (Testing)     loglikelihood:  0.86995, accuracy:  0.62934, RMSE:  1.02567, elapse: 0.059 min
+  - [Info] Maximum ll:  0.87555, Maximum accuracy:  0.63707, Minimum RMSE:  1.02567
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.35it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+  - (Testing)     loglikelihood:  0.87861, accuracy:  0.63578, RMSE:  1.03566, elapse: 0.059 min
+  - [Info] Maximum ll:  0.87861, Maximum accuracy:  0.63707, Minimum RMSE:  1.02567
+improvement in epoch 21
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.42it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.89173, accuracy:  0.63707, RMSE:  1.02232, elapse: 0.059 min
+  - [Info] Maximum ll:  0.89173, Maximum accuracy:  0.63707, Minimum RMSE:  1.02232
+improvement in epoch 22
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.89408, accuracy:  0.63320, RMSE:  1.02369, elapse: 0.059 min
+  - [Info] Maximum ll:  0.89408, Maximum accuracy:  0.63707, Minimum RMSE:  1.02232
+
+
+  - (Training)   :  44%|████████████████████████████████████████████████████████████████████████████████████                                                                                                            | 53/121 [00:05<00:05, 12.71it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.89965, accuracy:  0.65508, RMSE:  1.02971, elapse: 0.059 min
+  - [Info] Maximum ll:  0.89965, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 24
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.42it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  3.00s/it]
+  - (Testing)     loglikelihood:  0.90607, accuracy:  0.64350, RMSE:  1.03880, elapse: 0.059 min
+  - [Info] Maximum ll:  0.90607, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  85%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                            | 103/121 [00:07<00:01, 17.60it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+  - (Testing)     loglikelihood:  0.90799, accuracy:  0.65251, RMSE:  1.02816, elapse: 0.059 min
+  - [Info] Maximum ll:  0.90799, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 26
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.91493, accuracy:  0.63063, RMSE:  1.02437, elapse: 0.059 min
+  - [Info] Maximum ll:  0.91493, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 27
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.91627, accuracy:  0.63192, RMSE:  1.03351, elapse: 0.059 min
+  - [Info] Maximum ll:  0.91627, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.50it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  2.99s/it]
+  - (Testing)     loglikelihood:  0.91147, accuracy:  0.63707, RMSE:  1.04141, elapse: 0.059 min
+  - [Info] Maximum ll:  0.91627, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.56it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+  - (Testing)     loglikelihood:  0.91846, accuracy:  0.63320, RMSE:  1.03333, elapse: 0.059 min
+  - [Info] Maximum ll:  0.91846, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 30
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.57it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.92978, accuracy:  0.64736, RMSE:  1.03813, elapse: 0.059 min
+  - [Info] Maximum ll:  0.92978, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 31
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.92785, accuracy:  0.64865, RMSE:  1.03323, elapse: 0.060 min
+  - [Info] Maximum ll:  0.92978, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+improvement in epoch 32
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.96346, accuracy:  0.66549, RMSE:  0.76082, elapse: 0.136 min
+  - (Testing)     loglikelihood:  0.92960, accuracy:  0.64994, RMSE:  1.03982, elapse: 0.059 min
+  - [Info] Maximum ll:  0.92978, Maximum accuracy:  0.65508, Minimum RMSE:  1.02232
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+  - (Testing)     loglikelihood:  0.93701, accuracy:  0.65766, RMSE:  1.03084, elapse: 0.060 min
+  - [Info] Maximum ll:  0.93701, Maximum accuracy:  0.65766, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.52it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.00s/it]
+  - (Testing)     loglikelihood:  0.93600, accuracy:  0.65894, RMSE:  1.03348, elapse: 0.059 min
+  - [Info] Maximum ll:  0.93701, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  84%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                              | 102/121 [00:07<00:01, 17.56it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.93795, accuracy:  0.65508, RMSE:  1.03508, elapse: 0.060 min
+  - [Info] Maximum ll:  0.93795, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.38it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.94051, accuracy:  0.64479, RMSE:  1.03077, elapse: 0.060 min
+  - [Info] Maximum ll:  0.94051, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.97609, accuracy:  0.67675, RMSE:  0.80495, elapse: 0.136 min
+  - (Testing)     loglikelihood:  0.93618, accuracy:  0.65637, RMSE:  1.04129, elapse: 0.059 min
+  - [Info] Maximum ll:  0.94051, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.97759, accuracy:  0.68414, RMSE:  0.77010, elapse: 0.135 min
+  - (Testing)     loglikelihood:  0.94218, accuracy:  0.65122, RMSE:  1.02874, elapse: 0.059 min
+  - [Info] Maximum ll:  0.94218, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.97982, accuracy:  0.67851, RMSE:  0.79129, elapse: 0.136 min
+  - (Testing)     loglikelihood:  0.94616, accuracy:  0.65380, RMSE:  1.02943, elapse: 0.059 min
+  - [Info] Maximum ll:  0.94616, Maximum accuracy:  0.65894, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  83%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                               | 101/121 [00:07<00:01, 17.39it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:29,  2.90s/it]
+  - (Testing)     loglikelihood:  0.94675, accuracy:  0.66023, RMSE:  1.03294, elapse: 0.057 min
+  - [Info] Maximum ll:  0.94675, Maximum accuracy:  0.66023, Minimum RMSE:  1.02232
+improvement in epoch 41
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.94782, accuracy:  0.65251, RMSE:  1.03314, elapse: 0.059 min
+  - [Info] Maximum ll:  0.94782, Maximum accuracy:  0.66023, Minimum RMSE:  1.02232
+
+
+
+  - (Training)   :  74%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                  | 89/121 [00:07<00:02, 15.20it/s]
+
+
+  - (Training)   :   0%|                                                                                                                                                                                                         | 0/121 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.95078, accuracy:  0.66281, RMSE:  1.03534, elapse: 0.060 min
+  - [Info] Maximum ll:  0.95078, Maximum accuracy:  0.66281, Minimum RMSE:  1.02232
+
+
+
+  - (Training)   :  74%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                  | 89/121 [00:07<00:02, 15.26it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:02<01:32,  3.00s/it]
+  - (Testing)     loglikelihood:  0.95077, accuracy:  0.66409, RMSE:  1.03393, elapse: 0.059 min
+  - [Info] Maximum ll:  0.95078, Maximum accuracy:  0.66409, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  74%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                  | 89/121 [00:07<00:02, 15.24it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.01s/it]
+  - (Testing)     loglikelihood:  0.95170, accuracy:  0.64994, RMSE:  1.03602, elapse: 0.059 min
+  - [Info] Maximum ll:  0.95170, Maximum accuracy:  0.66409, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  74%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                 | 90/121 [00:07<00:02, 15.36it/s]
+
+
+  - (Validation) :   3%|██████                                                                                                                                                                                            | 1/32 [00:03<01:33,  3.02s/it]
+  - (Testing)     loglikelihood:  0.95185, accuracy:  0.66924, RMSE:  1.03299, elapse: 0.059 min
+  - [Info] Maximum ll:  0.95185, Maximum accuracy:  0.66924, Minimum RMSE:  1.02232
+
+
+
+
+  - (Training)   :  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                               | 91/121 [00:07<00:01, 15.57it/s]
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Testing)     loglikelihood:  0.95229, accuracy:  0.65766, RMSE:  1.03208, elapse: 0.059 min
+  - [Info] Maximum ll:  0.95229, Maximum accuracy:  0.66924, Minimum RMSE:  1.02232
+
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.99146, accuracy:  0.69785, RMSE:  0.74136, elapse: 0.144 min
+  - (Testing)     loglikelihood:  0.95363, accuracy:  0.67439, RMSE:  1.03611, elapse: 0.058 min
+  - [Info] Maximum ll:  0.95363, Maximum accuracy:  0.67439, Minimum RMSE:  1.02232
+
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.99143, accuracy:  0.69856, RMSE:  0.78582, elapse: 0.147 min
+  - (Testing)     loglikelihood:  0.95119, accuracy:  0.66924, RMSE:  1.03728, elapse: 0.059 min
+  - [Info] Maximum ll:  0.95363, Maximum accuracy:  0.67439, Minimum RMSE:  1.02232
+
+
+
+
+
+  - (Validation) :   0%|                                                                                                                                                                                                          | 0/32 [00:00<?, ?it/s]
+  - (Training)    loglikelihood:  0.99454, accuracy:  0.69926, RMSE:  0.78210, elapse: 0.144 min
+  - (Testing)     loglikelihood:  0.95556, accuracy:  0.67310, RMSE:  1.03526, elapse: 0.058 min
+  - [Info] Maximum ll:  0.95556, Maximum accuracy:  0.67439, Minimum RMSE:  1.02232
+

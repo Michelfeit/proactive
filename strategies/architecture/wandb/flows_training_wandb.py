@@ -25,16 +25,16 @@ def train(config=None):
         model = Transformer(
             num_types=num_types,
             num_goals=num_goals,
-            d_model=config.d_model,
+            d_model=config.n_head * config.d_k,
             d_rnn=config.d_rnn,
-            d_inner=config.d_model * 4,
+            d_inner=config.n_head * config.d_k * 4,
             n_layers=config.n_layers,
             n_head=config.n_head,
             d_k=config.d_k,
             d_v=config.d_k,
             dropout=config.dropout,
             activation=config.activation,
-            hawkes=True
+            hawkes=False
         )
         model.to(torch.device(config.device))
 
@@ -73,13 +73,11 @@ def train(config=None):
 
             wandb.log({'test_loss': test_loss})
             current_loss = test_loss
-            if(current_loss > best_loss):
+            if(current_loss < best_loss):
                 print(f"improvement in epoch {epoch}")
                 best_loss = current_loss
                 model_state = model.state_dict()
                 optim_state = optimizer.state_dict()
-            print()
-        return model_state, optim_state
     
 def train_epoch(model, training_data, optimizer, pred_loss_func, pred_loss_goal, opt, epoch):
     model.train()

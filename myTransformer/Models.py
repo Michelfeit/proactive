@@ -145,7 +145,6 @@ class RNN_layers(nn.Module):
         self.projection = nn.Linear(d_rnn, d_model)
 
     def forward(self, data, non_pad_mask):
-        print("WE DO BE USING RNN")
         lengths = non_pad_mask.squeeze(2).long().sum(1).cpu()
         pack_enc_output = nn.utils.rnn.pack_padded_sequence(
             data, lengths, batch_first=True, enforce_sorted=False)
@@ -179,6 +178,7 @@ class Transformer(nn.Module):
         print("d_inner", d_inner)
         print("d_k", d_k)
         print("d_k", d_v)
+        print("hawkes", hawkes)
         print()
         self.num_types = num_types
         self.num_goals = num_goals

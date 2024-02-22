@@ -11,11 +11,6 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-
-            "args": [
-                "-data data/Breakfast/",
-                "-batch 4",
-             ]
         }
     ]
 }

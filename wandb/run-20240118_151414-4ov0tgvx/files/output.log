@@ -1,7 +1,0 @@
-{'activation': 'default', 'batch_size': 4, 'd_inner': 256, 'd_k': 4, 'd_model': 64, 'd_rnn': 128, 'd_v': 4, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epoch': 100, 'learning_rate': 1e-05, 'n_head': 4, 'n_layers': 4, 'smooth': [0, 0.1]}
-Loading All Datasets...
-45 9
-Traceback (most recent call last):
-  File "C:\Users\mich0003\Repos\BachelorPP\proactive\strategies\architecture\hawkes_training_wandb.py", line 47, in train
-    if config.smooth > 0:
-TypeError: '>' not supported between instances of 'list' and 'int'

@@ -7,7 +7,7 @@ import myTransformer.Mixture_Utils as Mix_Utils
 from data_preparation import get_prediction_loader, load_prediciton_data, load_test_eos_data
 from trim_process import EventData_Trim
 
-LONGEST_TEST_ACTION_SEQUENCE = 20
+LONGEST_TEST_ACTION_SEQUENCE = 25
 ALPHA = .3
 LIST_OF_BETA_VALUES = [0.1, 0.2, 0.3, 0.5]
 
@@ -66,7 +66,11 @@ class Longterm_GMM_Strategy(Evaluation_Strategy):
                     # get next event predicitons 
                     pred_types, all_types  = MyUtils.get_next_type_prediction(prediction, trim_type)
                     # event times
-                    pred_times = Mix_Utils.get_inter_time_dist(model, opt, trim_event_data, mixture_enc[:,-1:,:]).sample()
+                    pred_times_all = Mix_Utils.get_inter_time_dist(model, opt, trim_event_data, mixture_enc).sample()
+                    pred_times_all = pred_times_all * Mix_Utils.get_non_pad_mask(trim_time)
+                    pred_times = Mix_Utils.get_next_time_prediction(pred_times_all)
+
+
                     # goals
                     pred_goals = torch.zeros_like(pred_times)
                     # whenever a sequence in that batch ended, swap prediction with a zero

@@ -19,7 +19,8 @@ from myTransformer.Models import Transformer, TransformerMixure
 from strategies.evaluation.longterm import Longterm_Strategy
 from strategies.evaluation.longterm_gmm import Longterm_GMM_Strategy
 from strategies.evaluation.shortterm_flows import Shortterm_Flows_Strategy
-from strategies.evaluation.shortterm_hawkes import Shortterm_Hawkes_Strategy
+from strategies.evaluation.shortterm_hawkes_PA import Shortterm_Hawkes_Strategy
+from strategies.evaluation.gmm_PA import Shortterm_GMM_Strategy
 
 MODEL_PATH_PREFIX = "trainedModels\\tf"
 MODEL_PATH_SUFFIX = ".pth.tar"
@@ -32,12 +33,16 @@ MODEL_PATH_SUFFIX = ".pth.tar"
 # python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 512 -d_rnn 0 -d_inner 2048 -d_k 512 -d_v 512 -dropout 0.1 -lr 1e-4 -smooth 0 -epoch 70 -rnn_layer False -timeframe st -activation softplus -architecture hawkes
 
 # longterm evaluation on proactive
-# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 256 -d_inner 1024 -d_k 512 -d_v 512 -epoch 70 -rnn_layer False -timeframe lt -activation softplus -architecture flows
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 2 -n_layers 4 -d_model 1024 -d_k 256 -d_v 256 -d_inner 4096 -epoch 50 -d_rnn 128 -timeframe lt -activation softplus -architecture flows
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 2 -n_layers 4 -d_model 1024 -d_k 256 -d_v 256 -d_inner 4096 -epoch 50 -d_rnn 128 -timeframe st -activation softplus -architecture flows
 
 # longterm evaluation on transformer hawkes
-# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 64 -d_inner 256 -epoch 50 -rnn_layer True -timeframe lt -activation softplus -architecture hawkes
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 8 -n_layers 3 -d_model 1024 -d_k 64 -d_v 64 -d_inner 4096 -epoch 50 -d_rnn 128 -timeframe lt -activation softplus -architecture hawkes
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 8 -n_layers 3 -d_model 1024 -d_k 128 -d_v 128 -d_inner 4096 -epoch 50 -d_rnn 128 -timeframe lt -activation softplus -architecture hawkes
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 512 -d_k 512 -d_v 512 -d_inner 4096 -epoch 50 -d_rnn 0 -timeframe lt -activation softplus -architecture hawkes
 
-# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 128 -d_inner 512 -epoch 60 -d_k 32 -d_v 32 -timeframe lt -architecture gmm
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 128 -d_inner 512 -epoch 60 -mix 5 -d_k 32 -d_v 32 -timeframe lt -architecture gmm
+# python MyMain.py -data data/Breakfast/ -batch 4 -n_head 4 -n_layers 4 -d_model 128 -d_inner 512 -epoch 60 -mix 32 -d_k 32 -d_v 32 -timeframe lt -architecture gmm
 
 def main():
     parser = argparse.ArgumentParser()
@@ -45,7 +50,7 @@ def main():
     parser.add_argument('-epoch', type=int, default=50)
     parser.add_argument('-batch_size', type=int, default=4)
     parser.add_argument('-d_model', type=int, default=128)
-    parser.add_argument('-d_rnn', type=int, default=0)
+    parser.add_argument('-d_rnn', type=int, default=128)
     parser.add_argument('-d_inner_hid', type=int, default=512)
     parser.add_argument('-d_k', type=int, default=32)
     parser.add_argument('-d_v', type=int, default=32)
@@ -57,19 +62,20 @@ def main():
 
     ### add argument for switching between evaluations
     parser.add_argument('-rnn_layer', type=boolean_string, default= 'False')
-    parser.add_argument('-mix', type=int, default= 16)
+    parser.add_argument('-mix', type=int, default= 5)
     parser.add_argument('-timeframe', type=str, default= 'lt')
     parser.add_argument('-activation', type=activation_string, default= 'softplus')
     parser.add_argument('-architecture', type=architecture_string, default= 'gmm')
 
     opt = parser.parse_args()
     opt.device = torch.device('cuda')
-    set_seed(42)
+    #set_seed(42)
 
     architecture = opt.architecture
     print(architecture)
     activation = opt.activation
     rnn_flag = opt.rnn_layer
+
     rnn_descriptor = "rnnOff"
 
     if(rnn_flag):
@@ -90,7 +96,7 @@ def main():
         model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_gmmModel(opt)
         if(timeframe == Timeframe.LONGTERM):
             evaluation_strategy = _set_eval_strategy(Timeframe.LONGTERM_GMM)
-            config = architecture.value + "_" + str(opt.mix)
+        config = architecture.value + "_" + str(opt.mix)
     else:
         model, trainloader, testloader, optimizer, scheduler, pred_loss_func, pred_loss_goal = prepare_proactive(opt)
         config = architecture.value + "_" + activation + "_" +  rnn_descriptor
@@ -196,6 +202,9 @@ def _set_eval_strategy(strat):
     elif(strat == Timeframe.SHORTTERM_HAWKES):
         st_h= Shortterm_Hawkes_Strategy()
         return st_h.evaluate
+    elif(strat == Timeframe.SHORTTERM_GMM):
+        st_gmm = Shortterm_GMM_Strategy()
+        return st_gmm.evaluate
     else:
         print("No evaluation specification found. Evaluating short term action prediciton.")
         st_f = Shortterm_Flows_Strategy()
@@ -205,6 +214,7 @@ def timeframe_string(s):
     timeframe_map = {
         "st_f": Timeframe.SHORTTERM_FLOWS,
         "st_h": Timeframe.SHORTTERM_HAWKES,
+        "st_gmm": Timeframe.SHORTTERM_GMM,
         "lt": Timeframe.LONGTERM,
     }
     return timeframe_map.get(s, Timeframe.SHORTTERM_FLOWS)
@@ -212,6 +222,7 @@ def timeframe_string(s):
 class Timeframe(Enum):
     SHORTTERM_FLOWS = "st_f"
     SHORTTERM_HAWKES = "st_h"
+    SHORTTERM_GMM = "st_gmm"
     LONGTERM = "lt"
     LONGTERM_GMM = "lt_gmm"
 

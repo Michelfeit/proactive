@@ -1,0 +1,34 @@
+2024-01-25 21:06:19,178 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Current SDK version is 0.16.2
+2024-01-25 21:06:19,178 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Configure stats pid to 23140
+2024-01-25 21:06:19,178 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Loading settings from C:\Users\mich0003\.config\wandb\settings
+2024-01-25 21:06:19,179 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Loading settings from C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\settings
+2024-01-25 21:06:19,179 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'flows_depend', 'entity': 'teammfeit', 'root_dir': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive', 'run_id': '9ex1nvd5', 'sweep_param_path': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive\\wandb\\sweep-qwy301pg\\config-9ex1nvd5.yaml', 'sweep_id': 'qwy301pg'}
+2024-01-25 21:06:19,179 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-01-25 21:06:19,179 INFO    Thread-181:23140 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'MainWAndB.py', 'program_abspath': 'C:\\Users\\mich0003\\Repos\\BachelorPP\\proactive\\MainWAndB.py', 'program': 'MainWAndB.py'}
+2024-01-25 21:06:19,179 INFO    Thread-181:23140 [wandb_init.py:_log_setup():526] Logging user logs to C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_210619-9ex1nvd5\logs\debug.log
+2024-01-25 21:06:19,180 INFO    Thread-181:23140 [wandb_init.py:_log_setup():527] Logging internal logs to C:\Users\mich0003\Repos\BachelorPP\proactive\wandb\run-20240125_210619-9ex1nvd5\logs\debug-internal.log
+2024-01-25 21:06:19,180 INFO    Thread-181:23140 [wandb_init.py:init():566] calling init triggers
+2024-01-25 21:06:19,180 INFO    Thread-181:23140 [wandb_init.py:init():574] wandb.init called with sweep_config: {'activation': 'softplus', 'batch_size': 4, 'd_k': 64, 'd_rnn': 0, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 2, 'n_layers': 3, 'smooth': 0}
+config: {}
+2024-01-25 21:06:19,180 INFO    Thread-181:23140 [wandb_init.py:init():616] starting backend
+2024-01-25 21:06:19,180 INFO    Thread-181:23140 [wandb_init.py:init():620] setting up manager
+2024-01-25 21:06:19,189 INFO    Thread-181:23140 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=spawn, using: spawn
+2024-01-25 21:06:19,190 INFO    Thread-181:23140 [wandb_init.py:init():628] backend started and connected
+2024-01-25 21:06:19,207 INFO    Thread-181:23140 [wandb_run.py:_config_callback():1342] config_cb None None {'activation': 'softplus', 'batch_size': 4, 'd_k': 64, 'd_rnn': 0, 'data': 'data/Breakfast/', 'device': 'cuda', 'dropout': 0.1, 'epochs': 50, 'learning_rate': 0.0001, 'n_head': 2, 'n_layers': 3, 'smooth': 0}
+2024-01-25 21:06:19,207 INFO    Thread-181:23140 [wandb_init.py:init():720] updated telemetry
+2024-01-25 21:06:19,250 INFO    Thread-181:23140 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2024-01-25 21:06:19,623 INFO    Thread-181:23140 [wandb_run.py:_on_init():2254] communicating current version
+2024-01-25 21:06:19,711 INFO    Thread-181:23140 [wandb_run.py:_on_init():2263] got version response 
+2024-01-25 21:06:19,712 INFO    Thread-181:23140 [wandb_init.py:init():804] starting run threads in backend
+2024-01-25 21:06:21,921 INFO    Thread-181:23140 [wandb_run.py:_console_start():2233] atexit reg
+2024-01-25 21:06:21,921 INFO    Thread-181:23140 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2024-01-25 21:06:21,922 INFO    Thread-181:23140 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2024-01-25 21:06:21,922 INFO    Thread-181:23140 [wandb_run.py:_redirect():2178] Redirects installed.
+2024-01-25 21:06:21,922 INFO    Thread-181:23140 [wandb_init.py:init():847] run started, returning control to user process
+2024-01-25 21:13:45,356 INFO    Thread-181:23140 [wandb_run.py:_finish():1962] finishing run teammfeit/flows_depend/9ex1nvd5
+2024-01-25 21:13:45,357 INFO    Thread-181:23140 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 0
+2024-01-25 21:13:45,357 INFO    Thread-181:23140 [wandb_run.py:_restore():2185] restore
+2024-01-25 21:13:45,357 INFO    Thread-181:23140 [wandb_run.py:_restore():2191] restore done
+2024-01-25 21:13:50,213 INFO    Thread-181:23140 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-01-25 21:13:50,214 INFO    Thread-181:23140 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-01-25 21:13:50,222 INFO    Thread-181:23140 [wandb_run.py:_footer_sync_info():3816] logging synced files
